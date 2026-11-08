@@ -99,6 +99,26 @@
       attributes: true, attributeFilter: ["style", "class", "hidden"] });
   }
 
+
+  // Photo slide (top to bottom) starts when the frame scrolls into view.
+  var panFrames = document.querySelectorAll(".cc-photo__frame");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+    }, { threshold: 0.4 });
+    panFrames.forEach(function (f) { if (f.querySelector(".cc-pan")) io.observe(f); });
+  } else { panFrames.forEach(function (f) { f.classList.add("is-in"); }); }
+
+  // Button press ripple.
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.addEventListener("pointerdown", function (ev) {
+      var b = ev.target.closest && ev.target.closest(".cc-btn");
+      if (!b) return;
+      var r = b.getBoundingClientRect(), dot = document.createElement("span");
+      dot.className = "cc-ripple"; dot.style.left = (ev.clientX - r.left) + "px"; dot.style.top = (ev.clientY - r.top) + "px";
+      b.appendChild(dot); setTimeout(function () { dot.remove(); }, 650);
+    });
+  }
   // Falling snow (same effect as the live hero): 20 flakes, skipped for reduced motion.
   if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.querySelectorAll(".cc-snow").forEach(function (box) {
