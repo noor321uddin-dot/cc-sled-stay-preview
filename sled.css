@@ -432,25 +432,47 @@ body.cc { margin: 0; }
 }
 
 
-/* Page 3 refresh: brighter snow over the hot-pools background, a roomier single card, nights dropdown */
+/* Page 3 v2: rider hero background, separate cards (no hinged strip), real spacing.
+   Desktop: offer on the left in the open, form card on the right. Mobile: two stacked cards with a gap. */
 .cc-snow--vip i { box-shadow: 0 0 6px 1px rgba(255,255,255,.55); }
-.cc-vip__part { max-width: 620px; padding-left: 44px; padding-right: 44px; }
-.cc-vip__top { padding-top: 46px; padding-bottom: 8px; }
-.cc-vip .cc-chip { margin-bottom: 26px; }
-.cc-clock { gap: 12px; margin: 30px 0 28px; }
-.cc-clock div { padding: 14px 4px 12px; }
-.cc-vip__tiers { gap: 10px 32px; padding: 22px 0 6px; }
-.cc-vip__promise { margin-top: 14px; line-height: 1.6; }
-.cc-vip__form { padding-top: 26px; padding-bottom: 12px; }
-.cc-vip__form form { border-top: 1px solid rgba(0,196,224,.15); padding-top: 26px; }
-.cc-field { margin-bottom: 20px; }
-.cc-vip__bottom { padding-top: 18px; padding-bottom: 34px; }
+.cc-vip-bg .cc-hero__media::after { background: linear-gradient(90deg, rgba(5,14,29,.86) 0%, rgba(5,14,29,.62) 55%, rgba(5,14,29,.80) 100%); }
+.cc-vip { padding: 112px 20px 88px; }
+.cc-vip__part { max-width: 560px; padding: 36px 32px; }
+.cc-vip__top { border-radius: 20px; border-bottom: 1px solid rgba(0,196,224,.32); padding: 40px 32px 34px; margin: 0 auto 20px; }
+.cc-vip__form { border-radius: 20px 20px 0 0; border-top: 1px solid rgba(0,196,224,.32); padding: 36px 32px 10px; box-shadow: inset 0 2px 0 rgba(0,196,224,.55), 0 30px 80px -30px rgba(0,0,0,.8); }
+.cc-vip__bottom { padding: 6px 32px 34px; }
+.cc-vip .cc-chip { margin-bottom: 24px; }
+.cc-vip h1 { line-height: 1.02; }
+.cc-clock { gap: 12px; margin: 32px 0 30px; }
+.cc-clock div { padding: 16px 4px 14px; border-radius: 14px; }
+.cc-vip__tiers { gap: 14px 36px; padding: 26px 0 4px; }
+.cc-vip__tiers .pair { display: inline-flex; align-items: baseline; gap: 10px; }
+.cc-vip__promise { margin-top: 18px; line-height: 1.65; }
+.cc-picked { margin-bottom: 22px; }
+.cc-field { margin-bottom: 22px; }
+.cc-field label { margin-bottom: 9px; }
+.cc-vip__form .cc-btn { margin-top: 8px; }
+.cc-consent { line-height: 1.6; }
+.cc-fine { margin-top: 12px; line-height: 1.6; }
 .cc-select { appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 44px; background-image: linear-gradient(45deg, transparent 50%, var(--cyan) 50%), linear-gradient(135deg, var(--cyan) 50%, transparent 50%); background-position: calc(100% - 22px) 50%, calc(100% - 16px) 50%; background-size: 6px 6px; background-repeat: no-repeat; }
 .cc-select option { color: #0b1626; }
+@media (min-width: 1024px) {
+  .cc-vip { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 480px); column-gap: 72px; align-items: start; max-width: 1180px; margin: 0 auto; padding: 140px 40px 96px; }
+  .cc-vip__part { max-width: none; margin: 0; }
+  .cc-vip__top { grid-column: 1; grid-row: 1 / span 2; background: transparent; border: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; padding: 20px 0 0; }
+  .cc-vip__top h1 { font-size: clamp(2.6rem, 3.6vw, 3.5rem); }
+  .cc-vip__form { grid-column: 2; grid-row: 1; padding: 40px 40px 10px; }
+  .cc-vip__bottom { grid-column: 2; grid-row: 2; padding: 6px 40px 38px; }
+  .cc-vip .cc-after { grid-column: 1 / -1; margin-top: 72px; }
+  .cc-clock { max-width: 520px; }
+}
 @media (max-width: 767px) {
+  .cc-vip { padding: 92px 16px 64px; }
   .cc-vip__part { padding-left: 22px; padding-right: 22px; }
-  .cc-vip__top { padding-top: 30px; }
-  .cc-clock { gap: 8px; margin: 20px 0 18px; }
-  .cc-vip__form form { padding-top: 20px; }
-  .cc-field { margin-bottom: 14px; }
+  .cc-vip__top { padding: 30px 22px 28px; margin-bottom: 16px; }
+  .cc-vip__form { padding-top: 28px; }
+  .cc-clock { gap: 8px; margin: 22px 0 22px; }
+  .cc-clock div { padding: 12px 2px 10px; }
+  .cc-field { margin-bottom: 18px; }
+  .cc-vip__bottom { padding: 4px 22px 28px; }
 }
