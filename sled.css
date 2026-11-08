@@ -60,6 +60,11 @@ body.cc { margin: 0; }
 .cc-snow { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
 .cc-snow i { position: absolute; top: 0; border-radius: 50%; background: rgba(255,255,255,.85); animation: snowFall linear infinite backwards; }
 @keyframes snowFall { 0% { transform: translateY(-20px) translateX(0); opacity: 0; } 10% { opacity: .8; } 90% { opacity: .6; } 100% { transform: translateY(120vh) translateX(40px); opacity: 0; } }
+
+/* Snowfall behind the offer cards (same flakes as the hero) */
+.cc-offer { position: relative; overflow: hidden; }
+.cc-offer > .cc-wrap { position: relative; z-index: 3; }
+.cc-offer .cc-snow i { box-shadow: 0 0 6px 1px rgba(255,255,255,.55); }
 .cc-hero__inner { position: relative; z-index: 10; flex: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 1180px; margin: 0 auto; padding: 60px 40px; }
 .cc-hero--short .cc-hero__inner { padding: 56px 40px 64px; }
 

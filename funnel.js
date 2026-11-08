@@ -102,7 +102,8 @@
   // Falling snow (same effect as the live hero): 20 flakes, skipped for reduced motion.
   if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.querySelectorAll(".cc-snow").forEach(function (box) {
-      for (var i = 0; i < 20; i++) {
+      var count = parseInt(box.getAttribute("data-flakes"), 10) || 20;
+      for (var i = 0; i < count; i++) {
         var f = document.createElement("i"), size = 2.3 + Math.random() * 2.5;
         f.style.cssText = "left:" + (Math.random() * 100) + "%;width:" + size + "px;height:" + size + "px;animation-duration:" +
           (4 + Math.random() * 4.6) + "s;animation-delay:" + (Math.random() * 6) + "s";
