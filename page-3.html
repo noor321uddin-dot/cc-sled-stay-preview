@@ -20,10 +20,10 @@
   <!-- Fixed cinematic background: sits behind every block, so GHL's native form can slot in between -->
   <div class="cc-vip-bg" aria-hidden="true">
     <picture class="cc-hero__media">
-      <source media="(min-width: 768px)" srcset="img/hero-desktop.webp" width="1080" height="608">
-      <img src="img/hero-mobile.webp" alt="" width="707" height="900">
+      <source media="(min-width: 768px)" srcset="img/vip-pools-night-desktop.webp" width="2160" height="1440">
+      <img src="img/vip-pools-night-mobile.webp" alt="" width="810" height="1080">
     </picture>
-    <div class="cc-snow"></div>
+    <div class="cc-snow cc-snow--vip" data-flakes="70"></div>
   </div>
 
   <header class="cc-header cc-header--veil">
@@ -46,7 +46,7 @@
         <div><span data-unit="s">00</span><small>Secs</small></div>
       </div>
       <p class="cc-vip__tiers"><span class="pair"><b class="pending">25%</b> <em>off 3+ nights</em></span> <span class="pair"><b class="pending">35%</b> <em>off 5+ nights</em></span></p>
-      <p class="cc-vip__promise">Ends Dec 20. We email you the booking link. <span class="pending-tag">Tiers pending Jason</span></p>
+      <p class="cc-vip__promise">One time only, ends Dec 20. We'll email your Early Bird access: your code and the booking link. <span class="pending-tag">Tiers pending Jason</span></p>
     </div>
 
     <!-- ghl:form-start (replaced by the native GHL form element, styled as the card's middle part) -->
@@ -70,6 +70,15 @@
         <div class="cc-field">
           <label for="phone">Phone <span>(optional)</span></label>
           <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" class="cc-input">
+        </div>
+        <div class="cc-field">
+          <label for="nights">How many nights? <span>(optional)</span></label>
+          <select id="nights" name="nights" class="cc-input cc-select">
+            <option value="">Not sure yet</option>
+            <option value="3">3 nights (25% off)</option>
+            <option value="4">4 nights (25% off)</option>
+            <option value="5+">5 nights or more (35% off)</option>
+          </select>
         </div>
         <button type="submit" class="cc-btn cc-btn--block">Send my Early Bird access</button>
       </form>

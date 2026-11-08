@@ -196,7 +196,7 @@
     setTimeout(function () {
       // One event per successful submit; event_id is shared by GA4, Meta and Google Ads for dedupe.
       window.dataLayer.push({ event: "sled_earlybird_lead", event_id: eventId,
-        cabin: form.elements.cabin.value });
+        cabin: form.elements.cabin.value, nights: form.elements.nights ? form.elements.nights.value : "" });
       form.hidden = true;
       document.querySelectorAll("[data-before-submit]").forEach(function (el) { el.hidden = true; });
       document.querySelectorAll("[data-after-submit]").forEach(function (el) { el.hidden = false; });
