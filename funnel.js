@@ -129,7 +129,7 @@
       var sel = ".cc-kicker, .cc-h2, .cc-body, .cc-photo, .cc-deal, .cc-term, .cc-acc__item, .cc-compare tr, .cc-map, .cc-caption, .cc-faq details, .cc-section-cta";
       groups.forEach(function (sec) {
         var items = sec.querySelectorAll(sel);
-        [].forEach.call(items, function (el, i) { el.classList.add("rv"); el.style.setProperty("--rv-d", Math.min(i, 8) * 80 + "ms"); });
+        [].forEach.call(items, function (el, i) { el.classList.add("rv"); el.style.setProperty("--rv-d", Math.min(i, 8) * 120 + "ms"); });
       });
       var rvIO = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
