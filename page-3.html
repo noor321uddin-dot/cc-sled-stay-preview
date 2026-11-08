@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get Early Bird access | Sled &amp; Stay | Crazy Creek Resort</title>
+  <meta name="description" content="Get Sled &amp; Stay Early Bird access before Dec 20.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="https://images.squarespace-cdn.com/content/v1/5fc6d45b1a9b7f647933bb1c/1606866823165-0ZX24FLS15C3XU1FNP0H/favicon.ico?format=100w">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="sled.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css" media="print" onload="this.media='all'">
+</head>
+<body class="cc" data-step="3-offer-form">
+
+  <!-- Fixed cinematic background: sits behind every block, so GHL's native form can slot in between -->
+  <div class="cc-vip-bg" aria-hidden="true">
+    <picture class="cc-hero__media">
+      <source media="(min-width: 768px)" srcset="img/hero-desktop.webp" width="1080" height="608">
+      <img src="img/hero-mobile.webp" alt="" width="707" height="900">
+    </picture>
+    <div class="cc-snow"></div>
+  </div>
+
+  <header class="cc-header cc-header--veil">
+    <div class="cc-wrap">
+      <img class="cc-logo" src="https://images.squarespace-cdn.com/content/v1/5fc6d45b1a9b7f647933bb1c/99b45da9-f497-4a5e-a5d2-163fe052a80a/CCR+Logo+2025+-+Logo+Horizontal+White+%26+Blue%403x.png?format=500w" alt="Crazy Creek Resort" width="160" height="40">
+      <a data-step-link href="page-2.html" class="cc-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Cabins</a>
+    </div>
+  </header>
+
+  <main class="cc-vip" id="eb-form">
+    <!-- VIP card, part 1 of 3 -->
+    <div class="cc-vip__part cc-vip__top">
+      <p class="cc-chip"><i class="fa-solid fa-crown" aria-hidden="true"></i> VIP access &middot; Early Bird</p>
+      <h1 data-before-submit>Get VIP access <span class="cyan">to Sled &amp; Stay pricing</span></h1>
+      <h1 data-after-submit hidden>You're on the <span class="cyan">Early Bird list</span></h1>
+      <div class="cc-clock" data-countdown role="timer" aria-label="Time left in the Early Bird Special, ends Dec 20">
+        <div><span data-unit="d">0</span><small>Days</small></div>
+        <div><span data-unit="h">00</span><small>Hours</small></div>
+        <div><span data-unit="m">00</span><small>Mins</small></div>
+        <div><span data-unit="s">00</span><small>Secs</small></div>
+      </div>
+      <p class="cc-vip__tiers"><span class="pair"><b class="pending">25%</b> <em>off 3+ nights</em></span> <span class="pair"><b class="pending">35%</b> <em>off 5+ nights</em></span></p>
+      <p class="cc-vip__promise">Ends Dec 20. We email you the booking link. <span class="pending-tag">Tiers pending Jason</span></p>
+    </div>
+
+    <!-- ghl:form-start (replaced by the native GHL form element, styled as the card's middle part) -->
+    <div class="cc-vip__part cc-vip__form">
+      <form data-earlybird-form novalidate>
+        <p id="picked-cabin" class="cc-picked" hidden><i class="fa-solid fa-house-chimney" aria-hidden="true"></i> Cabin you picked: <strong data-cabin-name></strong></p>
+        <input type="hidden" name="cabin">
+        <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
+        <input type="hidden" name="gclid"><input type="hidden" name="gbraid"><input type="hidden" name="wbraid"><input type="hidden" name="fbclid">
+        <input type="hidden" name="landing_page"><input type="hidden" name="event_id">
+        <div class="cc-field">
+          <label for="name">First name</label>
+          <input id="name" name="name" type="text" autocomplete="given-name" required class="cc-input" aria-describedby="name-error">
+          <p id="name-error" class="cc-error" hidden>Add your first name so we know who it's for.</p>
+        </div>
+        <div class="cc-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required class="cc-input" aria-describedby="email-error">
+          <p id="email-error" class="cc-error" hidden>That email doesn't look right. Check it, because your access goes there.</p>
+        </div>
+        <div class="cc-field">
+          <label for="phone">Phone <span>(optional)</span></label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" class="cc-input">
+        </div>
+        <button type="submit" class="cc-btn cc-btn--block">Send my Early Bird access</button>
+      </form>
+
+      <div id="form-success" class="cc-success animate__animated animate__fadeIn" tabindex="-1" role="status" hidden>
+        <div class="cc-success__icon"><i class="fa-solid fa-envelope-circle-check" aria-hidden="true"></i></div>
+        <h2>Check your email.</h2>
+        <p>Your access is on its way. First come, first served.</p>
+        <p class="cc-sent">Sent to <strong data-typed-email></strong>. It arrives within 2 minutes from <span class="pending">info@crazycreekresort.com</span>. Not there? Check Promotions or Spam.</p>
+        <p>Early Bird ends Dec 20.</p>
+        <button type="button" class="cc-linkbtn" onclick="location.reload()">Wrong address? Enter it again</button>
+      </div>
+    </div>
+    <!-- ghl:form-end -->
+    <!-- ghl:split (page-3a above, GHL form element, page-3b below) -->
+
+    <!-- VIP card, part 3 of 3 -->
+    <div class="cc-vip__part cc-vip__bottom">
+      <p class="cc-consent" data-before-submit>We'll email your Early Bird access and up to 4 reminders before Dec 20. Unsubscribe anytime.</p>
+      <p class="cc-fine">No texts. Crazy Creek Resort, 6162 Trans-Canada Hwy, Malakwa, BC V0E 2J0, info@crazycreekresort.com. <a href="https://crazycreekresort.com/resort-policies" target="_blank" rel="noopener">Privacy policy</a></p>
+    </div>
+
+    <!-- Below the card: offer, deposit and cancellation again -->
+    <section class="cc-after" aria-labelledby="after-h">
+      <h2 id="after-h">Book while dates are open</h2>
+      <ul class="cc-terms">
+        <li class="cc-term"><h3><i class="fa-solid fa-lock" aria-hidden="true"></i>One-night deposit</h3><p>Lock in your dates for a one-night deposit. No need to pay the whole stay up front.</p></li>
+        <li class="cc-term"><h3><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Plans change?</h3><p><span class="pending">Full refund up to 14 days before check-in. 50% refund 7 to 14 days out.</span> <span class="pending-tag">Pending Jason</span></p></li>
+        <li class="cc-term"><h3><i class="fa-solid fa-clock" aria-hidden="true"></i>January and February go first</h3><p>Peak weekends book out months ahead.</p></li>
+      </ul>
+      <p class="cc-center"><a href="#eb-form" data-before-submit class="cc-btn">Send my Early Bird access</a></p>
+    </section>
+  </main>
+
+  <footer class="cc-foot">
+    <div class="cc-wrap">
+      <p>Crazy Creek Resort, 6162 Trans-Canada Highway, Malakwa, BC V0E 2J0</p>
+      <p>&copy; 2026 Crazy Creek Resort</p>
+      <p class="mock"><span class="pending-tag">Mockup</span> For review only. The form sends nothing. Amber tags mark values Jason still has to confirm.</p>
+    </div>
+  </footer>
+
+  <script src="funnel.js" defer></script>
+</body>
+</html>
