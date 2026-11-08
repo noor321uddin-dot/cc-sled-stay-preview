@@ -119,6 +119,27 @@
       b.appendChild(dot); setTimeout(function () { dot.remove(); }, 650);
     });
   }
+
+  // Page 1 only: hero opening sequence, then sections reveal on scroll and replay when scrolled back up.
+  var heroEl = document.querySelector(".cc-hero");
+  if (heroEl && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    heroEl.classList.add("is-opening");
+    if ("IntersectionObserver" in window) {
+      var groups = document.querySelectorAll("main .cc-section");
+      var sel = ".cc-kicker, .cc-h2, .cc-body, .cc-photo, .cc-deal, .cc-term, .cc-acc__item, .cc-compare tr, .cc-map, .cc-caption, .cc-faq details, .cc-section-cta";
+      groups.forEach(function (sec) {
+        var items = sec.querySelectorAll(sel);
+        [].forEach.call(items, function (el, i) { el.classList.add("rv"); el.style.setProperty("--rv-d", Math.min(i, 8) * 80 + "ms"); });
+      });
+      var rvIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("in"); }
+          else { e.target.classList.remove("in"); e.target.setAttribute("data-from", e.boundingClientRect.top < 0 ? "top" : "bottom"); }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+      document.querySelectorAll(".rv").forEach(function (el) { rvIO.observe(el); });
+    }
+  }
   // Falling snow (same effect as the live hero): 20 flakes, skipped for reduced motion.
   if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.querySelectorAll(".cc-snow").forEach(function (box) {
