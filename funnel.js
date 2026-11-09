@@ -120,13 +120,14 @@
     });
   }
 
-  // Page 1 only: hero opening sequence, then sections reveal on scroll and replay when scrolled back up.
-  var heroEl = document.querySelector(".cc-hero");
-  if (heroEl && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    heroEl.classList.add("is-opening");
+  // All pages: opening sequence (page 1/2 hero, page 3 VIP card), then sections reveal on scroll and replay when scrolled back up.
+  var heroEl = document.querySelector(".cc-hero"), vipEl = document.querySelector(".cc-vip");
+  if ((heroEl || vipEl) && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (heroEl) heroEl.classList.add("is-opening");
+    if (vipEl) { vipEl.classList.add("is-opening"); var vbg = document.querySelector(".cc-vip-bg"); if (vbg) vbg.classList.add("is-opening"); }
     if ("IntersectionObserver" in window) {
-      var groups = document.querySelectorAll("main .cc-section");
-      var sel = ".cc-kicker, .cc-h2, .cc-body, .cc-photo, .cc-deal, .cc-term, .cc-acc__item, .cc-compare tr, .cc-map, .cc-caption, .cc-faq details, .cc-section-cta";
+      var groups = document.querySelectorAll("main .cc-section, main .cc-after");
+      var sel = ".cc-kicker, .cc-h2, .cc-body, .cc-photo, .cc-deal, .cc-term, .cc-acc__item, .cc-compare tr, .cc-map, .cc-caption, .cc-faq details, .cc-section-cta, .cc-card, .cc-after > h2, .cc-terms li, .cc-center";
       groups.forEach(function (sec) {
         var items = sec.querySelectorAll(sel);
         [].forEach.call(items, function (el, i) { el.classList.add("rv"); el.style.setProperty("--rv-d", Math.min(i, 8) * 120 + "ms"); });
