@@ -127,7 +127,7 @@
     if (vipEl) { vipEl.classList.add("is-opening"); var vbg = document.querySelector(".cc-vip-bg"); if (vbg) vbg.classList.add("is-opening"); }
     if ("IntersectionObserver" in window) {
       var groups = document.querySelectorAll("main .cc-section, main .cc-after");
-      var sel = ".cc-kicker, .cc-h2, .cc-body, .cc-photo, .cc-deal, .cc-term, .cc-acc__item, .cc-compare tr, .cc-map, .cc-caption, .cc-faq details, .cc-section-cta, .cc-card, .cc-after > h2, .cc-terms li, .cc-center";
+      var sel = ".cc-kicker, .cc-h2, .cc-body, .cc-photo, .cc-deal, .cc-term, .cc-acc__item, .cc-compare, .cc-map, .cc-caption, .cc-faq details, .cc-section-cta, .cc-card, .cc-after > h2, .cc-terms li, .cc-center";
       groups.forEach(function (sec) {
         var items = sec.querySelectorAll(sel);
         [].forEach.call(items, function (el, i) { el.classList.add("rv"); el.style.setProperty("--rv-d", Math.min(i, 8) * 120 + "ms"); });
