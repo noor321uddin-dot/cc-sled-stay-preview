@@ -765,3 +765,6 @@ body.cc { margin: 0; }
   .cc-vip { align-items: stretch; }
   .cc-vip__bottom { display: flex; flex-direction: column; justify-content: center; }
 }
+
+/* the deadline sits on its own line under the delivery promise */
+.cc-consent__when { display: block; }
