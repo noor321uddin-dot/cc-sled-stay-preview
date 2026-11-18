@@ -153,8 +153,10 @@
       });
       if (cur) cur.textContent = at + 1;
     }
-    var hit = gal.querySelector("[data-next]");
-    if (hit) hit.addEventListener("click", function () { show(at + 1); });
+    var next = gal.querySelector("[data-next]");
+    if (next) next.addEventListener("click", function () { show(at + 1); });
+    var prev = gal.querySelector("[data-prev]");
+    if (prev) prev.addEventListener("click", function () { show(at - 1); });
     dots.forEach(function (d) {
       d.addEventListener("click", function () { show(parseInt(d.dataset.go, 10)); });
     });

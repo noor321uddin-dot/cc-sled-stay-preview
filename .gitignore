@@ -1,0 +1,6 @@
+# Source photos pulled from the client's OneDrive, kept locally for re-cropping.
+# The web-sized derivatives in img/ are what the site serves.
+.onedrive-cabins/
+
+# Editor/script backups
+*.bak

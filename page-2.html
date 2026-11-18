@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
-  <link rel="preload" as="image" href="img/card-selkirk-1-400.webp" imagesrcset="img/card-selkirk-1-400.webp 400w, img/card-selkirk-1-800.webp 800w" imagesizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" fetchpriority="high">
-  <link rel="stylesheet" href="sled.css?v=39">
+  <link rel="preload" as="image" href="img/card-selkirk-1-400.webp?v=85" imagesrcset="img/card-selkirk-1-400.webp?v=85 400w, img/card-selkirk-1-800.webp?v=85 800w" imagesizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" fetchpriority="high">
+  <link rel="stylesheet" href="sled.css?v=88">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css" media="print" onload="this.media='all'">
 </head>
@@ -26,15 +26,15 @@
 
   <main>
     <!-- Short cinematic band: same hero language as page 1 -->
-    <section class="cc-hero cc-hero--short">
+    <section class="cc-hero cc-hero--short cc-hero--center">
       <picture class="cc-hero__media">
-        <source media="(min-width: 768px)" srcset="img/cabins-aerial-desktop.webp" width="2160" height="1216">
-        <img src="img/cabins-aerial-mobile.webp" alt="" width="860" height="1216">
+        <source media="(min-width: 768px)" srcset="img/cabins-aerial-desktop.webp?v=85" width="2160" height="1216">
+        <img src="img/cabins-aerial-mobile.webp?v=85" alt="" width="860" height="1216">
       </picture>
       <div class="cc-snow" aria-hidden="true"></div>
       <div class="cc-hero__inner">
-        <p class="cc-chip"><i class="fa-solid fa-snowflake" aria-hidden="true"></i> Early bird offer: ends December 20</p>
-        <h1 class="cc-display"><span>Explore</span> <span class="cyan">cabins</span></h1>
+        <p class="cc-chip"><i class="fa-solid fa-snowflake" aria-hidden="true"></i> Early bird offer: <b class="cc-chip__when">ends December 20</b></p>
+        <h1 class="cc-display cc-display--oneline"><span>Explore</span> <span class="cyan">cabins</span></h1>
         <p class="cc-tag">Limited time only</p>
         <p class="cc-clock__lead">Offer ends in</p>
         <div class="cc-clock" data-countdown role="timer" aria-label="Time left in the Early Bird Special, ends Dec 20">
@@ -44,7 +44,18 @@
           <div><span data-unit="s">00</span><small>Secs</small></div>
         </div>
         <p class="cc-sub">Every cabin has a kitchen, a fire pit and hot pools access. Choose the one that fits your crew, and claim Early Bird pricing.</p>
-        <p class="cc-note"><i class="fa-solid fa-tag" aria-hidden="true"></i><span><span class="mark">20% off 3+ nights</span> <span class="mark">30% off 5+ nights</span> with powered truck and trailer parking</span></p>
+        <ul class="cc-ocards" aria-label="Early Bird packages">
+          <li class="cc-ocard cc-ocard--lead">
+            <p class="cc-ocard__name">Truck &amp; trailer parking</p>
+            <p class="cc-ocard__tier"><b>20%</b><span>off 3+ nights</span></p>
+            <p class="cc-ocard__tier"><b>30%</b><span>off 5+ nights</span></p>
+          </li>
+          <li class="cc-ocard">
+            <p class="cc-ocard__name">Cabin only</p>
+            <p class="cc-ocard__tier"><b>10%</b><span>off 3+ nights</span></p>
+            <p class="cc-ocard__tier"><b>20%</b><span>off 5+ nights</span></p>
+          </li>
+        </ul>
         <div class="cc-ctas">
           <a data-step-link href="page-3.html" class="cc-btn">Claim early-bird pricing <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
@@ -59,13 +70,15 @@
 
           <li class="cc-card">
             <div class="cc-card__media cc-gal" data-gallery>
-                  <img class="cc-shot is-on" src="img/card-selkirk-1-800.webp" srcset="img/card-selkirk-1-400.webp 400w, img/card-selkirk-1-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Selkirk living room with a stone fireplace" width="800" height="600" decoding="async" fetchpriority="high">
-                  <img class="cc-shot" src="img/card-selkirk-2-800.webp" srcset="img/card-selkirk-2-400.webp 400w, img/card-selkirk-2-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Selkirk covered deck and exterior" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-selkirk-3-800.webp" srcset="img/card-selkirk-3-400.webp 400w, img/card-selkirk-3-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Selkirk bedroom with two queen beds" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-selkirk-4-800.webp" srcset="img/card-selkirk-4-400.webp 400w, img/card-selkirk-4-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Selkirk kitchen" width="800" height="600" decoding="async" loading="lazy">
-              <button type="button" class="cc-gal__hit" data-next aria-label="Next photo of the Selkirk"></button>
-              <div class="cc-gal__dots"><button type="button" class="cc-dot is-on" data-go="0" aria-label="Photo 1 of 4" aria-current="true"></button><button type="button" class="cc-dot" data-go="1" aria-label="Photo 2 of 4"></button><button type="button" class="cc-dot" data-go="2" aria-label="Photo 3 of 4"></button><button type="button" class="cc-dot" data-go="3" aria-label="Photo 4 of 4"></button></div>
-              <p class="cc-gal__count"><span data-cur>1</span>/4</p>
+                  <img class="cc-shot is-on" src="img/card-selkirk-1-800.webp?v=85" srcset="img/card-selkirk-1-400.webp?v=85 400w, img/card-selkirk-1-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Selkirk gear drying room with suits and boot dryers" width="800" height="600" decoding="async" fetchpriority="high">
+                  <img class="cc-shot" src="img/card-selkirk-2-800.webp?v=85" srcset="img/card-selkirk-2-400.webp?v=85 400w, img/card-selkirk-2-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Selkirk living area with the stone fireplace" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-selkirk-3-800.webp?v=85" srcset="img/card-selkirk-3-400.webp?v=85 400w, img/card-selkirk-3-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Selkirk bunk room" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-selkirk-4-800.webp?v=85" srcset="img/card-selkirk-4-400.webp?v=85 400w, img/card-selkirk-4-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Selkirk covered deck" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-selkirk-5-800.webp?v=85" srcset="img/card-selkirk-5-400.webp?v=85 400w, img/card-selkirk-5-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Selkirk exterior" width="800" height="600" decoding="async" loading="lazy">
+              <button type="button" class="cc-gal__nav cc-gal__nav--prev" data-prev aria-label="Previous photo of the Selkirk"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+              <button type="button" class="cc-gal__nav cc-gal__nav--next" data-next aria-label="Next photo of the Selkirk"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+              <div class="cc-gal__dots"><button type="button" class="cc-dot is-on" data-go="0" aria-label="Photo 1 of 5" aria-current="true"></button><button type="button" class="cc-dot" data-go="1" aria-label="Photo 2 of 5"></button><button type="button" class="cc-dot" data-go="2" aria-label="Photo 3 of 5"></button><button type="button" class="cc-dot" data-go="3" aria-label="Photo 4 of 5"></button><button type="button" class="cc-dot" data-go="4" aria-label="Photo 5 of 5"></button></div>
+              <p class="cc-gal__count"><span data-cur>1</span>/5</p>
               <div class="cc-card__over"><h2 class="cc-card__name">Selkirk</h2><span class="cc-card__sleeps">Sleeps 6</span></div>
             </div>
             <div class="cc-card__body">
@@ -74,19 +87,21 @@
                 <div class="cc-spec"><dt>Key feature</dt><dd class="hl">Gear drying room</dd></div>
                 <div class="cc-spec"><dt>Parking</dt><dd>Truck &amp; trailer powered parking</dd></div>
               </dl>
-              <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">Get the drying room <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">Gear dries overnight <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </li>
 
           <li class="cc-card">
             <div class="cc-card__media cc-gal" data-gallery>
-                  <img class="cc-shot is-on" src="img/card-apex-1-800.webp" srcset="img/card-apex-1-400.webp 400w, img/card-apex-1-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Apex living room with a fireplace" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-apex-2-800.webp" srcset="img/card-apex-2-400.webp 400w, img/card-apex-2-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Apex exterior at dusk with the fire pit lit" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-apex-3-800.webp" srcset="img/card-apex-3-400.webp 400w, img/card-apex-3-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Apex king bedroom" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-apex-4-800.webp" srcset="img/card-apex-4-400.webp 400w, img/card-apex-4-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Apex bunk room" width="800" height="600" decoding="async" loading="lazy">
-              <button type="button" class="cc-gal__hit" data-next aria-label="Next photo of the Apex"></button>
-              <div class="cc-gal__dots"><button type="button" class="cc-dot is-on" data-go="0" aria-label="Photo 1 of 4" aria-current="true"></button><button type="button" class="cc-dot" data-go="1" aria-label="Photo 2 of 4"></button><button type="button" class="cc-dot" data-go="2" aria-label="Photo 3 of 4"></button><button type="button" class="cc-dot" data-go="3" aria-label="Photo 4 of 4"></button></div>
-              <p class="cc-gal__count"><span data-cur>1</span>/4</p>
+                  <img class="cc-shot is-on" src="img/card-apex-1-800.webp?v=85" srcset="img/card-apex-1-400.webp?v=85 400w, img/card-apex-1-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Apex bunk room" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-apex-2-800.webp?v=85" srcset="img/card-apex-2-400.webp?v=85 400w, img/card-apex-2-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Apex open living area" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-apex-3-800.webp?v=85" srcset="img/card-apex-3-400.webp?v=85 400w, img/card-apex-3-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Apex king bedroom" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-apex-4-800.webp?v=85" srcset="img/card-apex-4-400.webp?v=85 400w, img/card-apex-4-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Apex kitchen" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-apex-5-800.webp?v=85" srcset="img/card-apex-5-400.webp?v=85 400w, img/card-apex-5-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Apex exterior" width="800" height="600" decoding="async" loading="lazy">
+              <button type="button" class="cc-gal__nav cc-gal__nav--prev" data-prev aria-label="Previous photo of the Apex"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+              <button type="button" class="cc-gal__nav cc-gal__nav--next" data-next aria-label="Next photo of the Apex"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+              <div class="cc-gal__dots"><button type="button" class="cc-dot is-on" data-go="0" aria-label="Photo 1 of 5" aria-current="true"></button><button type="button" class="cc-dot" data-go="1" aria-label="Photo 2 of 5"></button><button type="button" class="cc-dot" data-go="2" aria-label="Photo 3 of 5"></button><button type="button" class="cc-dot" data-go="3" aria-label="Photo 4 of 5"></button><button type="button" class="cc-dot" data-go="4" aria-label="Photo 5 of 5"></button></div>
+              <p class="cc-gal__count"><span data-cur>1</span>/5</p>
               <div class="cc-card__over"><h2 class="cc-card__name">Apex</h2><span class="cc-card__sleeps">Sleeps 6</span></div>
             </div>
             <div class="cc-card__body">
@@ -95,19 +110,21 @@
                 <div class="cc-spec"><dt>Key feature</dt><dd class="hl">Room for the whole crew</dd></div>
                 <div class="cc-spec"><dt>Parking</dt><dd>Truck &amp; trailer powered parking</dd></div>
               </dl>
-              <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">Keep the crew together <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">Bunks for the kids <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </li>
 
           <li class="cc-card">
             <div class="cc-card__media cc-gal" data-gallery>
-                  <img class="cc-shot is-on" src="img/card-shuswap-1-800.webp" srcset="img/card-shuswap-1-400.webp 400w, img/card-shuswap-1-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Shuswap covered deck with a gas fire pit" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-shuswap-2-800.webp" srcset="img/card-shuswap-2-400.webp 400w, img/card-shuswap-2-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Shuswap open living room and kitchen" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-shuswap-3-800.webp" srcset="img/card-shuswap-3-400.webp 400w, img/card-shuswap-3-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Shuswap king bedroom" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-shuswap-4-800.webp" srcset="img/card-shuswap-4-400.webp 400w, img/card-shuswap-4-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Shuswap kitchen" width="800" height="600" decoding="async" loading="lazy">
-              <button type="button" class="cc-gal__hit" data-next aria-label="Next photo of the Shuswap"></button>
-              <div class="cc-gal__dots"><button type="button" class="cc-dot is-on" data-go="0" aria-label="Photo 1 of 4" aria-current="true"></button><button type="button" class="cc-dot" data-go="1" aria-label="Photo 2 of 4"></button><button type="button" class="cc-dot" data-go="2" aria-label="Photo 3 of 4"></button><button type="button" class="cc-dot" data-go="3" aria-label="Photo 4 of 4"></button></div>
-              <p class="cc-gal__count"><span data-cur>1</span>/4</p>
+                  <img class="cc-shot is-on" src="img/card-shuswap-1-800.webp?v=85" srcset="img/card-shuswap-1-400.webp?v=85 400w, img/card-shuswap-1-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Shuswap covered deck with the gas fire pit" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-shuswap-2-800.webp?v=85" srcset="img/card-shuswap-2-400.webp?v=85 400w, img/card-shuswap-2-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Shuswap open living space" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-shuswap-3-800.webp?v=85" srcset="img/card-shuswap-3-400.webp?v=85 400w, img/card-shuswap-3-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Shuswap master bedroom" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-shuswap-4-800.webp?v=85" srcset="img/card-shuswap-4-400.webp?v=85 400w, img/card-shuswap-4-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Shuswap second bedroom with two doubles" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-shuswap-5-800.webp?v=85" srcset="img/card-shuswap-5-400.webp?v=85 400w, img/card-shuswap-5-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Shuswap exterior" width="800" height="600" decoding="async" loading="lazy">
+              <button type="button" class="cc-gal__nav cc-gal__nav--prev" data-prev aria-label="Previous photo of the Shuswap"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+              <button type="button" class="cc-gal__nav cc-gal__nav--next" data-next aria-label="Next photo of the Shuswap"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+              <div class="cc-gal__dots"><button type="button" class="cc-dot is-on" data-go="0" aria-label="Photo 1 of 5" aria-current="true"></button><button type="button" class="cc-dot" data-go="1" aria-label="Photo 2 of 5"></button><button type="button" class="cc-dot" data-go="2" aria-label="Photo 3 of 5"></button><button type="button" class="cc-dot" data-go="3" aria-label="Photo 4 of 5"></button><button type="button" class="cc-dot" data-go="4" aria-label="Photo 5 of 5"></button></div>
+              <p class="cc-gal__count"><span data-cur>1</span>/5</p>
               <div class="cc-card__over"><h2 class="cc-card__name">Shuswap</h2><span class="cc-card__sleeps">Sleeps 6</span></div>
             </div>
             <div class="cc-card__body">
@@ -116,19 +133,21 @@
                 <div class="cc-spec"><dt>Key feature</dt><dd class="hl">Covered deck, gas fire pit</dd></div>
                 <div class="cc-spec"><dt>Parking</dt><dd>Truck &amp; trailer powered parking</dd></div>
               </dl>
-              <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">Light the fire pit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">Two bedrooms, one fire <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </li>
 
           <li class="cc-card">
             <div class="cc-card__media cc-gal" data-gallery>
-                  <img class="cc-shot is-on" src="img/card-monashee-1-800.webp" srcset="img/card-monashee-1-400.webp 400w, img/card-monashee-1-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Monashee exterior with its covered deck" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-monashee-2-800.webp" srcset="img/card-monashee-2-400.webp 400w, img/card-monashee-2-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Monashee studio with a king bed" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-monashee-3-800.webp" srcset="img/card-monashee-3-400.webp 400w, img/card-monashee-3-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Monashee bunk room" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-monashee-4-800.webp" srcset="img/card-monashee-4-400.webp 400w, img/card-monashee-4-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Monashee window bar looking into the trees" width="800" height="600" decoding="async" loading="lazy">
-              <button type="button" class="cc-gal__hit" data-next aria-label="Next photo of the Monashee"></button>
-              <div class="cc-gal__dots"><button type="button" class="cc-dot is-on" data-go="0" aria-label="Photo 1 of 4" aria-current="true"></button><button type="button" class="cc-dot" data-go="1" aria-label="Photo 2 of 4"></button><button type="button" class="cc-dot" data-go="2" aria-label="Photo 3 of 4"></button><button type="button" class="cc-dot" data-go="3" aria-label="Photo 4 of 4"></button></div>
-              <p class="cc-gal__count"><span data-cur>1</span>/4</p>
+                  <img class="cc-shot is-on" src="img/card-monashee-1-800.webp?v=85" srcset="img/card-monashee-1-400.webp?v=85 400w, img/card-monashee-1-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Monashee exterior and large covered deck" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-monashee-2-800.webp?v=85" srcset="img/card-monashee-2-400.webp?v=85 400w, img/card-monashee-2-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Monashee studio interior" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-monashee-3-800.webp?v=85" srcset="img/card-monashee-3-400.webp?v=85 400w, img/card-monashee-3-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Monashee bunk room" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-monashee-4-800.webp?v=85" srcset="img/card-monashee-4-400.webp?v=85 400w, img/card-monashee-4-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Monashee kitchenette" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-monashee-5-800.webp?v=85" srcset="img/card-monashee-5-400.webp?v=85 400w, img/card-monashee-5-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Monashee interior" width="800" height="600" decoding="async" loading="lazy">
+              <button type="button" class="cc-gal__nav cc-gal__nav--prev" data-prev aria-label="Previous photo of the Monashee"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+              <button type="button" class="cc-gal__nav cc-gal__nav--next" data-next aria-label="Next photo of the Monashee"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+              <div class="cc-gal__dots"><button type="button" class="cc-dot is-on" data-go="0" aria-label="Photo 1 of 5" aria-current="true"></button><button type="button" class="cc-dot" data-go="1" aria-label="Photo 2 of 5"></button><button type="button" class="cc-dot" data-go="2" aria-label="Photo 3 of 5"></button><button type="button" class="cc-dot" data-go="3" aria-label="Photo 4 of 5"></button><button type="button" class="cc-dot" data-go="4" aria-label="Photo 5 of 5"></button></div>
+              <p class="cc-gal__count"><span data-cur>1</span>/5</p>
               <div class="cc-card__over"><h2 class="cc-card__name">Monashee</h2><span class="cc-card__sleeps">Sleeps 6</span></div>
             </div>
             <div class="cc-card__body">
@@ -137,19 +156,21 @@
                 <div class="cc-spec"><dt>Key feature</dt><dd class="hl">Large covered deck</dd></div>
                 <div class="cc-spec"><dt>Parking</dt><dd>Truck &amp; trailer powered parking</dd></div>
               </dl>
-              <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">Stretch out on the deck <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">Studio with the big deck <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </li>
 
           <li class="cc-card">
             <div class="cc-card__media cc-gal" data-gallery>
-                  <img class="cc-shot is-on" src="img/card-elkhorn-1-800.webp" srcset="img/card-elkhorn-1-400.webp 400w, img/card-elkhorn-1-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Elkhorn living room" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-elkhorn-2-800.webp" srcset="img/card-elkhorn-2-400.webp 400w, img/card-elkhorn-2-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Elkhorn kitchen" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-elkhorn-3-800.webp" srcset="img/card-elkhorn-3-400.webp 400w, img/card-elkhorn-3-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Elkhorn king bedroom" width="800" height="600" decoding="async" loading="lazy">
-                  <img class="cc-shot" src="img/card-elkhorn-4-800.webp" srcset="img/card-elkhorn-4-400.webp 400w, img/card-elkhorn-4-800.webp 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Elkhorn fire pit lit at night" width="800" height="600" decoding="async" loading="lazy">
-              <button type="button" class="cc-gal__hit" data-next aria-label="Next photo of the Elkhorn"></button>
-              <div class="cc-gal__dots"><button type="button" class="cc-dot is-on" data-go="0" aria-label="Photo 1 of 4" aria-current="true"></button><button type="button" class="cc-dot" data-go="1" aria-label="Photo 2 of 4"></button><button type="button" class="cc-dot" data-go="2" aria-label="Photo 3 of 4"></button><button type="button" class="cc-dot" data-go="3" aria-label="Photo 4 of 4"></button></div>
-              <p class="cc-gal__count"><span data-cur>1</span>/4</p>
+                  <img class="cc-shot is-on" src="img/card-elkhorn-1-800.webp?v=85" srcset="img/card-elkhorn-1-400.webp?v=85 400w, img/card-elkhorn-1-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Elkhorn outdoor space" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-elkhorn-2-800.webp?v=85" srcset="img/card-elkhorn-2-400.webp?v=85 400w, img/card-elkhorn-2-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Elkhorn living area" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-elkhorn-3-800.webp?v=85" srcset="img/card-elkhorn-3-400.webp?v=85 400w, img/card-elkhorn-3-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Elkhorn king bedroom" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-elkhorn-4-800.webp?v=85" srcset="img/card-elkhorn-4-400.webp?v=85 400w, img/card-elkhorn-4-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Elkhorn kitchen" width="800" height="600" decoding="async" loading="lazy">
+                  <img class="cc-shot" src="img/card-elkhorn-5-800.webp?v=85" srcset="img/card-elkhorn-5-400.webp?v=85 400w, img/card-elkhorn-5-800.webp?v=85 800w" sizes="(min-width: 1025px) 400px, (min-width: 769px) 48vw, 92vw" alt="Elkhorn bathroom" width="800" height="600" decoding="async" loading="lazy">
+              <button type="button" class="cc-gal__nav cc-gal__nav--prev" data-prev aria-label="Previous photo of the Elkhorn"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+              <button type="button" class="cc-gal__nav cc-gal__nav--next" data-next aria-label="Next photo of the Elkhorn"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+              <div class="cc-gal__dots"><button type="button" class="cc-dot is-on" data-go="0" aria-label="Photo 1 of 5" aria-current="true"></button><button type="button" class="cc-dot" data-go="1" aria-label="Photo 2 of 5"></button><button type="button" class="cc-dot" data-go="2" aria-label="Photo 3 of 5"></button><button type="button" class="cc-dot" data-go="3" aria-label="Photo 4 of 5"></button><button type="button" class="cc-dot" data-go="4" aria-label="Photo 5 of 5"></button></div>
+              <p class="cc-gal__count"><span data-cur>1</span>/5</p>
               <div class="cc-card__over"><h2 class="cc-card__name">Elkhorn</h2><span class="cc-card__sleeps">Sleeps 4</span></div>
             </div>
             <div class="cc-card__body">
@@ -158,7 +179,7 @@
                 <div class="cc-spec"><dt>Key feature</dt><dd class="hl">Big outdoor space</dd></div>
                 <div class="cc-spec"><dt>Parking</dt><dd>Truck &amp; trailer powered parking</dd></div>
               </dl>
-              <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">Take the quiet one <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">The quiet four-sleeper <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </li>
 
@@ -191,6 +212,6 @@
     <a data-step-link href="page-3.html" class="cc-btn cc-btn--block">Claim early-bird pricing</a>
   </div>
 
-  <script src="funnel.js?v=16" defer></script>
+  <script src="funnel.js?v=83" defer></script>
 </body>
 </html>

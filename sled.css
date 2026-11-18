@@ -20,7 +20,7 @@
   --amber: #f5b942;
   --amber-ink: #a86a00;
   /* type scale: one set of roles for all 3 pages */
-  --t-hero: clamp(2.5rem, 1.6rem + 3vw, 4rem);       /* 40px phone, 64px desktop */
+  --t-hero: clamp(2.375rem, 1.6rem + 2.7vw, 3.875rem); /* 38px phone, 62px desktop */
   --t-h2: clamp(1.75rem, 1.25rem + 1.6vw, 2.5rem);   /* 28px phone, 40px desktop */
   --t-h3: 1.125rem;
   --t-body: 1rem;
@@ -62,18 +62,23 @@ body.cc { margin: 0; }
 @keyframes snowFall { 0% { transform: translateY(-20px) translateX(0); opacity: 0; } 10% { opacity: .8; } 90% { opacity: .6; } 100% { transform: translateY(120vh) translateX(40px); opacity: 0; } }
 
 /* Snowfall behind the offer cards (same flakes as the hero) */
-.cc-offer { position: relative; overflow: hidden; }
-.cc-offer > .cc-wrap { position: relative; z-index: 3; }
-.cc-offer .cc-snow i { box-shadow: 0 0 6px 1px rgba(255,255,255,.55); }
+.cc-ocard { position: relative; overflow: hidden; }
+.cc-ocard > .cc-wrap { position: relative; z-index: 3; }
+.cc-ocard .cc-snow i { box-shadow: 0 0 6px 1px rgba(255,255,255,.55); }
 .cc-hero__inner { position: relative; z-index: 10; flex: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 1180px; margin: 0 auto; padding: 60px 40px; }
 .cc-hero--short .cc-hero__inner { padding: 56px 40px 64px; }
 
-.cc-chip { display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; background: rgba(0,196,224,.1); border: 1px solid rgba(0,196,224,.28); border-radius: 8px; padding: 8px 18px; font-family: var(--font-mono); font-size: .875rem; font-weight: 700; letter-spacing: .12em; color: var(--cyan); text-transform: uppercase; }
+.cc-chip { display: inline-flex; align-self: flex-start; align-items: center; gap: 12px; background: rgba(5,14,29,.84); border: 1px solid rgba(0,196,224,.72); border-radius: 10px; padding: 15px 30px; font-family: var(--font-mono); font-size: 1.125rem; font-weight: 700; letter-spacing: .09em; color: var(--cyan); text-transform: uppercase; backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); box-shadow: 0 8px 30px rgba(5,14,29,.55), inset 0 1px 0 rgba(0,196,224,.3); }
+.cc-chip i { font-size: 1.1em; }
+/* the label stays cyan, the date carries the weight: it is the fact being announced */
+.cc-chip__when { color: var(--ice); font-weight: 700; }
 .cc-chip .cc-count { color: var(--ice); font-variant-numeric: tabular-nums; letter-spacing: .06em; }
 .cc-hero .cc-chip { margin-bottom: 14px; }
 
 .cc-display { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--t-hero); line-height: .98; letter-spacing: -.015em; color: var(--ice); text-wrap: balance; }
 .cc-display span { display: block; }
+/* short headlines that read better unbroken; the spans still carry the colour split */
+.cc-display--oneline span { display: inline; }
 .cc-display .cyan { color: var(--cyan); }
 .cc-sub { margin-top: 14px; max-width: 520px; font-size: var(--t-lead); line-height: 1.7; color: rgba(240,248,255,.84); }
 .cc-sub strong { color: var(--ice); }
@@ -120,7 +125,7 @@ body.cc { margin: 0; }
 .cc-h2 .cyan { color: var(--cyan-ink); }
 .cc-section--night .cc-h2 .cyan { color: var(--cyan); }
 .cc-body { margin-top: 18px; max-width: 60ch; font-size: var(--t-lead); line-height: 1.7; text-wrap: pretty; }
-.cc-section-cta { margin-top: 32px; }
+.cc-section-cta { margin-top: 32px; text-align: center; }
 
 /* map feature: centred, locked to a single screen. The copy block is kept deliberately
    compact because every pixel it gives up goes to the map, which grows 1.567x as fast. */
@@ -161,8 +166,7 @@ body.cc { margin: 0; }
   .cc-hero .cc-chip { margin-bottom: 14px; }
   .cc-hero .cc-clock { margin-top: 16px; gap: 8px; }
   .cc-hero .cc-clock div { padding: 10px 4px 8px; }
-  .cc-hero .cc-clock span { font-size: 1.75rem; }
-  .cc-hero .cc-clock > div:first-child span { font-size: 2.2rem; }
+  .cc-hero .cc-clock { --clock-lg: 2.6rem; --clock-sm: 1.25rem; }
   .cc-hero .cc-clock__lead { margin-top: 6px; margin-bottom: 2px; }
   .cc-tagrow { margin-top: 6px; }
   .cc-hero .cc-risk { margin-top: 6px; font-size: .8125rem; padding: 7px 13px; }
@@ -224,31 +228,47 @@ body.cc { margin: 0; }
 .cc-compare i { margin-right: 6px; }
 
 /* ---------- offer (huge numerals) ---------- */
-.cc-offer { position: relative; overflow: hidden; }
-.cc-offer::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 85% 10%, rgba(0,196,224,.14), transparent 70%); pointer-events: none; }
-.cc-offer .cc-wrap { position: relative; }
+.cc-ocard { position: relative; overflow: hidden; }
+.cc-ocard::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 85% 10%, rgba(0,196,224,.14), transparent 70%); pointer-events: none; }
+.cc-ocard .cc-wrap { position: relative; }
 .cc-tiers { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid rgba(0,196,224,.15); }
 .cc-tier { padding: 32px 32px 8px 0; }
 .cc-tier + .cc-tier { padding-left: 40px; border-left: 1px solid rgba(0,196,224,.15); }
 .cc-tier__num .pending { line-height: 1; padding: .04em .12em; }
 .cc-tier__num { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(5.5rem, 15vw, 12rem); line-height: .85; letter-spacing: -.04em; color: var(--cyan); }
 .cc-tier__label { display: block; margin-top: 14px; font-family: var(--font-mono); font-size: 1rem; font-weight: 700; letter-spacing: .12em; color: var(--ice); text-transform: uppercase; }
-.cc-terms { margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.cc-term { border: 1px solid rgba(0,196,224,.28); border-radius: 18px; padding: 18px 20px; background: linear-gradient(180deg, rgba(11,29,51,.9), rgba(7,19,42,.9)); box-shadow: inset 0 1px 0 rgba(255,255,255,.06); }
-.cc-term h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--t-h3); letter-spacing: .01em; color: var(--ice); text-transform: uppercase; }
-.cc-term p { margin-top: 6px; font-size: .9375rem; line-height: 1.55; color: rgba(240,248,255,.72); }
-.cc-term i { color: var(--cyan); margin-right: 8px; }
+.cc-terms { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; padding: 0; list-style: none; }
+.cc-term { display: flex; flex-direction: column; border: 1px solid rgba(0,196,224,.26); border-radius: 18px; padding: 22px 22px 24px; background: linear-gradient(180deg, rgba(11,29,51,.9), rgba(7,19,42,.9)); box-shadow: inset 0 1px 0 rgba(255,255,255,.06); }
+/* one marker row of fixed height across all three cards, so every h3 below
+   it lands on the same line. The deadline card varies by what sits on the
+   right of that row, not by a second headline. */
+.cc-term__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 42px; margin-bottom: 18px; }
+.cc-term .cc-term__ico { margin: 0; flex: 0 0 auto; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: rgba(0,196,224,.12); border: 1px solid rgba(0,196,224,.32); color: var(--cyan); font-size: 1rem; }
+.cc-term__ico i { margin: 0; color: inherit; }
+.cc-term h3 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: var(--t-h3); letter-spacing: .01em; color: var(--ice); text-transform: uppercase; }
+.cc-term p { margin: 8px 0 0; font-size: .9375rem; line-height: 1.6; color: rgba(240,248,255,.72); }
+/* third card is the deadline, so it carries the live day count instead of an icon */
+/* same navy material as its neighbours; amber is the accent, not the surface */
+.cc-term--deadline { border-color: rgba(245,185,66,.45); box-shadow: inset 0 1px 0 rgba(245,185,66,.28); }
+.cc-term--deadline .cc-term__ico { background: rgba(245,185,66,.13); border-color: rgba(245,185,66,.4); color: var(--amber); }
+.cc-term .cc-term__count { margin: 0; display: flex; align-items: baseline; gap: 8px; }
+.cc-term__count b { font-family: var(--font-display); font-weight: 700; font-size: 2.25rem; line-height: 1; color: var(--amber); font-variant-numeric: tabular-nums; }
+.cc-term__count span { font-family: var(--font-mono); font-size: .6875rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; color: rgba(245,185,66,.82); }
 
-.cc-deals { margin-top: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.cc-deal { position: relative; padding: 6px; border-radius: 24px; background: linear-gradient(140deg, rgba(0,196,224,.55), rgba(0,196,224,.08) 45%, rgba(0,196,224,.3)); box-shadow: 0 24px 60px -28px rgba(0,0,0,.7); }
-.cc-deal__core { position: relative; height: 100%; border-radius: 18px; padding: 34px 32px 28px; background: linear-gradient(180deg, #0b1d33, #07132a); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
-.cc-deal__badge { position: absolute; top: 14px; right: 14px; }
-.cc-deal__num { font-family: var(--font-display); font-weight: 700; font-size: clamp(3.25rem, 2.5rem + 2.2vw, 4.5rem); line-height: 1; letter-spacing: -.02em; color: var(--ice); }
-.cc-deal__num span { margin-left: 10px; font-size: .34em; letter-spacing: .04em; color: var(--cyan); text-transform: uppercase; }
-.cc-deal__label { margin-top: 12px; font-family: var(--font-mono); font-size: .875rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(240,248,255,.8); }
-.cc-deal--best .cc-deal__num { color: var(--cyan); }
-.cc-deal__alt { margin-top: 16px; font-size: .9375rem; line-height: 1.55; color: rgba(240,248,255,.72); }
-.cc-deal--best .cc-deal__num span { color: var(--ice); }
+/* Two purchasable packages, two night-tiers each. Trailer parking leads in
+   amber (bigger discount, the rider package); cabin only is the off-ramp. */
+.cc-packs { margin: 36px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+.cc-pack { display: flex; flex-direction: column; gap: 6px; padding: 26px 28px 28px; border: 1px solid rgba(0,196,224,.26); border-radius: 20px; background: linear-gradient(180deg, rgba(11,29,51,.92), rgba(7,19,42,.92)); box-shadow: inset 0 1px 0 rgba(255,255,255,.07); }
+.cc-pack--lead { border-color: rgba(245,185,66,.45); box-shadow: inset 0 1px 0 rgba(255,255,255,.09), 0 24px 60px -30px rgba(0,0,0,.75); }
+.cc-pack__name { margin: 0; font-family: var(--font-mono); font-size: .8125rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan); }
+.cc-pack--lead .cc-pack__name { color: var(--amber); }
+.cc-pack__sub { margin: 0; font-size: .875rem; line-height: 1.55; color: rgba(240,248,255,.6); }
+.cc-pack__tiers { margin-top: 20px; display: flex; gap: 36px; flex-wrap: wrap; }
+.cc-pack__tier { margin: 0; }
+.cc-pack__tier b { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.5rem, 1.9rem + 1.6vw, 3.25rem); line-height: 1; letter-spacing: -.02em; color: var(--ice); font-variant-numeric: tabular-nums; }
+.cc-pack--lead .cc-pack__tier b { color: var(--amber); }
+.cc-pack__tier span { display: block; margin-top: 9px; font-family: var(--font-mono); font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(240,248,255,.68); }
+
 
 /* ---------- FAQ ---------- */
 .cc-faq { margin-top: 40px; border-top: 1px solid var(--line); }
@@ -298,20 +318,18 @@ body.cc { margin: 0; }
 .cc-vip .cc-chip { margin-bottom: 22px; }
 .cc-vip h1 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--t-h2); line-height: .98; letter-spacing: -.02em; }
 .cc-vip h1 .cyan { color: var(--cyan); display: block; }
-.cc-clock { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 26px 0 22px; }
-.cc-clock div { text-align: center; border: 1px solid rgba(0,196,224,.22); border-radius: 12px; padding: 10px 4px 8px; background: rgba(0,196,224,.06); }
-.cc-clock span { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 7vw, 2.75rem); line-height: 1; color: var(--ice); font-variant-numeric: tabular-nums; }
+.cc-clock { --clock-lg: 3rem; --clock-sm: 1.375rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 8px; margin: 26px 0 22px; }
+.cc-clock div { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 1px solid rgba(0,196,224,.22); border-radius: 12px; padding: 10px 4px 8px; background: rgba(0,196,224,.06); }
+.cc-clock span { display: block; font-family: var(--font-display); font-weight: 700; font-size: var(--clock-sm); line-height: 1; color: rgba(240,248,255,.84); font-variant-numeric: tabular-nums; }
 /* Derek, 10 Nov: days must read larger than hours, minutes and seconds, so "33" is the
    number people take away. Sized per breakpoint because the hero has a tight height budget. */
-.cc-clock > div:first-child span { font-size: 2.6rem; }
+/* days is the number they remember; h/m/s is live texture under it */
+.cc-clock > div:first-child { margin-right: 6px; border-color: rgba(0,196,224,.5); background: rgba(0,196,224,.13); }
+.cc-clock > div:first-child span { font-size: var(--clock-lg); color: var(--ice); }
+.cc-clock > div:first-child small { color: rgba(240,248,255,.92); font-size: .75rem; }
 .cc-clock__lead { margin-top: 22px; font-family: var(--font-mono); font-size: .75rem; font-weight: 700; letter-spacing: .14em; color: rgba(240,248,255,.7); text-transform: uppercase; }
 .cc-hero .cc-clock__lead { margin-top: 5px; margin-bottom: 2px; }
 .cc-clock small { display: block; margin-top: 6px; font-family: var(--font-mono); font-size: .6875rem; letter-spacing: .14em; color: rgba(240,248,255,.6); text-transform: uppercase; }
-.cc-vip__tiers { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; padding: 14px 0 4px; border-top: 1px solid rgba(0,196,224,.15); }
-.cc-vip__tiers b { font-family: var(--font-display); font-weight: 700; font-size: 2.25rem; line-height: 1; color: var(--ice); padding: 0 .15em; }
-.cc-vip__tiers .pair { white-space: nowrap; }
-.cc-vip__tiers em { font-style: normal; font-family: var(--font-mono); font-size: .8125rem; font-weight: 700; letter-spacing: .1em; color: rgba(240,248,255,.75); text-transform: uppercase; }
-.cc-vip__promise { margin-top: 10px; font-size: .9375rem; color: rgba(240,248,255,.75); }
 .cc-picked { margin-bottom: 14px; display: inline-flex; gap: 8px; align-items: center; font-family: var(--font-mono); font-size: .8125rem; letter-spacing: .06em; color: rgba(240,248,255,.85); }
 .cc-picked i { color: var(--cyan); }
 .cc-field { margin-bottom: 14px; }
@@ -334,7 +352,6 @@ body.cc { margin: 0; }
 .cc-after { position: relative; z-index: 10; max-width: 1080px; margin: 56px auto 0; }
 .cc-after .cc-terms { margin-top: 20px; }
 .cc-after h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--t-h2); text-align: center; color: var(--ice); }
-.cc-after .cc-center { text-align: center; margin-top: 28px; }
 
 /* ---------- pending placeholders (Jason values) ---------- */
 .pending { display: inline-block; padding: 0 .2em; border: 2px dashed var(--amber); border-radius: 6px; background: rgba(245,185,66,.12); }
@@ -349,7 +366,7 @@ body.cc { margin: 0; }
 .cc-tag { display: inline-block; align-self: flex-start; margin: 4px 0 2px; padding: 5px 12px; border-radius: 6px; background: var(--amber); color: var(--night); font: 700 .75rem/1.3 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
 /* Derek #8: orange deposit line, then a bold white cancellation line, near the top.
    The cancellation value is still unconfirmed, so it keeps its pending tag. */
-.cc-risk { margin-top: 8px; display: inline-flex; align-self: flex-start; flex-direction: column; gap: 2px;
+.cc-risk { margin-top: 8px; display: inline-flex; align-self: flex-start; flex-direction: row; align-items: center; flex-wrap: wrap; gap: 2px 14px;
   padding: 10px 16px; border-radius: 12px; border: 1px solid rgba(245,185,66,.34); background: rgba(245,185,66,.07);
   font-size: .9375rem; line-height: 1.45; }
 .cc-risk__dep { color: var(--amber); font-weight: 700; }
@@ -374,10 +391,7 @@ body.cc { margin: 0; }
   .cc-vip__top { padding-top: 28px; padding-bottom: 20px; }
   .cc-vip .cc-chip { margin-bottom: 14px; }
   .cc-clock { margin: 16px 0 14px; }
-  .cc-clock span { font-size: 2rem; }
-  .cc-clock > div:first-child span { font-size: 2.6rem; }
-  .cc-vip__tiers { padding-top: 10px; }
-  .cc-vip__tiers .pair { display: inline-flex; align-items: baseline; gap: 8px; }
+  .cc-clock { --clock-lg: 2.75rem; --clock-sm: 1.3125rem; }
   .cc-picked { margin-bottom: 8px; }
   .cc-field { margin-bottom: 10px; }
 }
@@ -387,6 +401,9 @@ body.cc { margin: 0; }
   .cc-split { grid-template-columns: 1fr; gap: 56px; }
   .cc-cards { grid-template-columns: 1fr 1fr; }
   .cc-terms { grid-template-columns: 1fr; }
+  .cc-packs { grid-template-columns: 1fr; gap: 14px; margin-top: 26px; }
+  .cc-pack { padding: 20px 20px 22px; }
+  .cc-pack__tiers { gap: 28px; margin-top: 16px; }
   .cc-stats { grid-template-columns: repeat(2, 1fr); }
   .cc-stats > div + div { border-left: 0; }
   .cc-stats > div:nth-child(2n) { border-left: 1px solid rgba(0,196,224,.15); }
@@ -397,7 +414,7 @@ body.cc { margin: 0; }
   .cc-wrap { padding: 0 20px; }
   .cc-section { padding: 56px 0; }
   .cc-hero__inner, .cc-hero--short .cc-hero__inner { padding: 36px 20px 40px; }
-  .cc-hero .cc-chip { margin-bottom: 24px; font-size: .75rem; letter-spacing: .08em; padding: 8px 12px; flex-wrap: wrap; gap: 4px 10px; }
+  .cc-hero .cc-chip { margin-bottom: 24px; font-size: .9375rem; letter-spacing: .05em; padding: 12px 17px; flex-wrap: wrap; gap: 4px 10px; }
   .cc-sub { margin-top: 16px; }
   .cc-ctas { margin-top: 28px; flex-direction: column; align-items: stretch; }
   .cc-ctas .cc-btn { width: 100%; max-width: 440px; }
@@ -421,13 +438,6 @@ body.cc { margin: 0; }
   .cc-compare i { display: block; margin: 0 auto 2px; }
   .cc-tiers { grid-template-columns: 1fr; }
   .cc-map { padding: 4px; border-radius: 22px; }
-  .cc-deals { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
-  .cc-deal { padding: 4px; border-radius: 20px; }
-  .cc-deal__core { padding: 34px 16px 18px; border-radius: 16px; }
-  .cc-deal__badge { top: 10px; right: 10px; font-size: .6875rem; padding: 2px 6px; }
-  .cc-deal__num span { display: block; margin: 4px 0 0; font-size: .3em; }
-  .cc-deal__label { font-size: .75rem; letter-spacing: .1em; padding-bottom: 0; }
-  .cc-deal__core { display: block; }
   .cc-acc__btn { gap: 12px; padding: 10px 12px; }
   .cc-acc__panel p { padding: 0 12px 16px 68px; }
   .cc-tier { padding: 26px 0 6px; }
@@ -443,15 +453,8 @@ body.cc { margin: 0; }
   .cc-vip h1 { font-size: var(--t-h2); line-height: 1.04; }
   .cc-clock { margin: 10px 0 10px; gap: 6px; }
   .cc-clock div { padding: 6px 2px 5px; }
-  .cc-clock span { font-size: 1.5rem; }
-  .cc-clock > div:first-child span { font-size: 2rem; }
+  .cc-clock { --clock-lg: 2.35rem; --clock-sm: 1.125rem; }
   .cc-clock small { margin-top: 3px; font-size: .625rem; }
-  .cc-vip__tiers { gap: 4px 8px; padding-top: 10px; }
-  .cc-vip__tiers b { font-size: 1.35rem; }
-  .cc-vip__tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .cc-vip__tiers .pair { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
-  .cc-vip__tiers em { font-size: .6875rem; letter-spacing: .02em; }
-  .cc-vip__promise { margin-top: 6px; font-size: .875rem; }
   .cc-field { margin-bottom: 10px; }
   .cc-field label { margin-bottom: 4px; }
   .cc-input { min-height: 48px; padding: 11px 14px; }
@@ -481,16 +484,12 @@ body.cc { margin: 0; }
 .cc-vip__bottom { padding: 6px 32px 34px; }
 .cc-vip .cc-chip { margin-bottom: 24px; }
 .cc-vip h1 { line-height: 1.02; }
-.cc-clock { gap: 12px; margin: 32px 0 30px; }
-.cc-clock div { padding: 16px 4px 14px; border-radius: 14px; }
-.cc-vip__tiers { gap: 14px 36px; padding: 26px 0 4px; }
-.cc-vip__tiers .pair { display: inline-flex; align-items: baseline; gap: 10px; }
+.cc-vip .cc-clock { gap: 12px; margin: 32px 0 30px; }
+.cc-vip .cc-clock div { padding: 16px 4px 14px; border-radius: 14px; }
 /* one rhythm down the left column: the parts were landing on 4 different gaps */
 .cc-vip__top .cc-tag { margin: 10px 0 0; }
 .cc-vip__top .cc-clock__lead { margin-top: 18px; }
 .cc-vip__top .cc-clock { margin: 10px 0 22px; }
-.cc-vip__top .cc-deal__alt { margin-top: 12px; }
-.cc-vip__promise { margin-top: 18px; line-height: 1.65; }
 .cc-picked { margin-bottom: 22px; }
 .cc-field { margin-bottom: 22px; }
 .cc-field label { margin-bottom: 9px; }
@@ -498,6 +497,7 @@ body.cc { margin: 0; }
 .cc-consent { line-height: 1.6; }
 .cc-fine { margin-top: 12px; line-height: 1.6; }
 @media (min-width: 1024px) {
+  .cc-clock { --clock-lg: 3.5rem; --clock-sm: 1.5rem; }
   /* .cc-vip__top spans both rows. Without an explicit flexible second track the grid
      splits its extra height across both rows and tears the form card away from the
      consent card below it, which are two halves of one card. `auto 1fr` pins row 1 to
@@ -589,16 +589,179 @@ body.cc { margin: 0; }
 .cc-gal { position: relative; }
 .cc-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .4s var(--ease-out); }
 .cc-shot.is-on { opacity: 1; }
-.cc-gal__hit { position: absolute; inset: 0; z-index: 3; width: 100%; border: 0; padding: 0; background: none; cursor: pointer; }
+/* visible prev/next controls, vertically centred so they clear the dots and
+   counter above and the cabin name and sleeps badge below */
+.cc-gal__nav { position: absolute; z-index: 5; top: 50%; transform: translateY(-50%); width: 38px; height: 38px; display: grid; place-items: center; padding: 0; border: 1px solid rgba(240,248,255,.3); border-radius: 50%; background: rgba(5,14,29,.55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: var(--ice); font-size: .875rem; cursor: pointer; box-shadow: 0 3px 14px rgba(5,14,29,.45); transition: background .25s, border-color .25s, color .25s, transform .25s var(--ease-out); }
+.cc-gal__nav--prev { left: 10px; }
+.cc-gal__nav--next { right: 10px; }
+.cc-gal__nav:hover { background: var(--cyan); border-color: var(--cyan); color: var(--night); }
+.cc-gal__nav--prev:hover { transform: translateY(-50%) translateX(-2px); }
+.cc-gal__nav--next:hover { transform: translateY(-50%) translateX(2px); }
 .cc-gal__dots { position: absolute; z-index: 4; top: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; }
 .cc-dot { width: 20px; height: 4px; padding: 0; border: 0; border-radius: 2px; background: rgba(255,255,255,.45); cursor: pointer; transition: background .25s; }
 .cc-dot.is-on { background: var(--cyan); }
 .cc-gal__count { position: absolute; z-index: 4; top: 10px; right: 12px; font-family: var(--font-mono); font-size: .6875rem; font-weight: 700; letter-spacing: .08em; color: var(--ice); background: rgba(5,14,29,.6); border-radius: 5px; padding: 4px 7px; }
 .cc-gal .cc-card__over, .cc-gal::after { z-index: 2; }
-.cc-gal__hit:focus-visible, .cc-dot:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
+.cc-gal__nav:focus-visible, .cc-dot:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
 
 @media (max-width: 768px) {
 }
 @media (prefers-reduced-motion: reduce) {
-  .cc-shot { transition: none; }
+  .cc-shot, .cc-gal__nav { transition: none; }
+}
+
+/* ---------- hero offer cards: one per WebRez package ----------
+   Two packages, two night-tiers each. Trailer parking leads (it is the
+   rider package and the bigger discount); cabin only is the off-ramp,
+   so it is deliberately quieter rather than a matching twin. */
+.cc-ocards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; max-width: 520px; margin: 10px 0 0; padding: 0; list-style: none; }
+.cc-ocard { display: flex; flex-direction: column; gap: 7px; padding: 12px 16px 13px; border: 1px solid rgba(0,196,224,.24); border-radius: 12px; background: rgba(5,14,29,.52); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); text-align: left; }
+.cc-ocard--lead { border-color: rgba(245,185,66,.52); background: rgba(5,14,29,.66); box-shadow: 0 6px 22px rgba(5,14,29,.45); }
+.cc-ocard__name { margin: 0; font-family: var(--font-mono); font-size: .6875rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(240,248,255,.66); }
+.cc-ocard--lead .cc-ocard__name { color: var(--amber); }
+.cc-ocard__tier { margin: 0; display: flex; align-items: baseline; gap: 9px; }
+.cc-ocard__tier b { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; line-height: 1; color: var(--ice); font-variant-numeric: tabular-nums; }
+.cc-ocard--lead .cc-ocard__tier b { color: var(--amber); }
+.cc-ocard__tier span { font-family: var(--font-mono); font-size: .6875rem; letter-spacing: .07em; text-transform: uppercase; color: rgba(240,248,255,.62); }
+
+/* phone: one card per row, its two tiers side by side */
+@media (max-width: 600px) {
+  .cc-ocards { grid-template-columns: 1fr; gap: 10px; max-width: 440px; }
+  .cc-ocard { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 10px; padding: 11px 14px 12px; }
+  .cc-ocard__name { grid-column: 1 / -1; }
+  .cc-ocard__tier { gap: 7px; }
+  .cc-ocard__tier b { font-size: 1.375rem; }
+  .cc-ocard__tier span { font-size: .625rem; letter-spacing: .04em; white-space: nowrap; }
+}
+
+/* ---------- centered hero variant (page 1) ---------- */
+.cc-hero--center { padding-top: 42px; }
+.cc-hero--center .cc-hero__inner { align-items: center; text-align: center; }
+.cc-hero--center .cc-chip,
+.cc-hero--center .cc-tag,
+.cc-hero--center .cc-risk,
+.cc-hero--center .cc-note,
+.cc-hero--center .cc-sub { align-self: center; }
+.cc-hero--center .cc-note { text-align: center; }
+.cc-hero--center .cc-ocards { margin-left: auto; margin-right: auto; }
+
+/* Hero rhythm. Four meaning-groups, not eight equal rows:
+   1 announcement (chip)  2 identity (h1)
+   3 urgency  (tag + lead + clock, read as one unit)
+   4 the deal (risk + offer cards, read as one unit)  5 action (button)
+   Tight inside a group, generous between them. Three knobs, so the short-
+   viewport block can compress the whole rhythm without touching each rule. */
+.cc-hero--center .cc-hero__inner { --sp-group: 18px; --sp-step: 9px; --sp-tight: 4px; --sp-optical: 8px; padding-top: 22px; padding-bottom: 22px; }
+.cc-hero--center .cc-chip { margin-bottom: 0; }
+.cc-hero--center .cc-display { margin-top: var(--sp-group); margin-bottom: 0; }
+.cc-hero--center .cc-tag { margin: calc(var(--sp-group) + var(--sp-optical)) 0 0; }
+.cc-hero--center .cc-clock__lead { margin-top: var(--sp-step); margin-bottom: 0; }
+.cc-hero--center .cc-clock { margin-top: var(--sp-tight); margin-bottom: 0; }
+.cc-hero--center .cc-risk { margin-top: var(--sp-group); }
+.cc-hero--center .cc-ocards { margin-top: var(--sp-step); }
+.cc-hero--center .cc-ctas { margin-top: var(--sp-group); }
+.cc-hero--center .cc-sub { margin-top: var(--sp-group); margin-bottom: 0; max-width: 560px; }
+/* page 2 is a short hero, so it can breathe where page 1 cannot */
+.cc-hero--short.cc-hero--center .cc-hero__inner { --sp-group: 22px; --sp-step: 12px; --sp-tight: 5px; }
+.cc-hero--center .cc-chip { justify-content: center; text-align: center; }
+.cc-hero--center .cc-clock { margin-left: auto; margin-right: auto; }
+.cc-hero--center .cc-clock__lead { width: 100%; color: rgba(240,248,255,.95); text-shadow: 0 1px 10px rgba(5,14,29,.85); }
+.cc-hero--center .cc-display { text-shadow: 0 2px 26px rgba(5,14,29,.5); }
+.cc-hero--center .cc-ctas { justify-content: center; }
+.cc-hero--center .cc-display { max-width: 18ch; }
+/* scrim: centre-weighted so the copy sits on the darkest part */
+.cc-hero--center .cc-hero__media::after {
+  background:
+    radial-gradient(64% 58% at 50% 46%, rgba(5,14,29,.74) 0%, rgba(5,14,29,.46) 58%, rgba(5,14,29,0) 100%),
+    linear-gradient(180deg, rgba(5,14,29,.6) 0%, rgba(5,14,29,.1) 34%, rgba(5,14,29,.2) 62%, rgba(5,14,29,.86) 100%);
+}
+
+/* tall desktop viewports: the base rhythm is tuned to fit 900px exactly, so
+   on a taller screen it reads squeezed while ~90px sits unused. Open it up. */
+@media (min-width: 1024px) and (min-height: 940px) {
+  .cc-hero--center .cc-hero__inner { --sp-group: 26px; --sp-step: 16px; --sp-tight: 8px; --sp-optical: 12px; padding-top: 34px; padding-bottom: 34px; }
+}
+
+/* short desktop viewports: same rhythm, compressed through the three knobs.
+   Must live after the base .cc-hero--center rules: equal specificity, so
+   source order decides and a media query adds none. */
+/* height-gated, not desktop-gated: a short window is short at 811px wide too,
+   and the hero's rhythm is a vertical concern. 768 floor keeps phones out. */
+@media (min-width: 768px) and (max-height: 850px) {
+  .cc-hero--center .cc-hero__inner { --sp-group: 9px; --sp-step: 6px; --sp-tight: 3px; --sp-optical: 0px; padding-top: 6px; padding-bottom: 6px; }
+  .cc-hero--center .cc-display { font-size: clamp(2.25rem, 3.5vw, 3.25rem); }
+  .cc-hero--center .cc-ocard { padding: 9px 14px 10px; gap: 4px; }
+  .cc-hero--center .cc-ocard__tier b { font-size: 1.3125rem; }
+  .cc-hero--center .cc-ocards { gap: 10px; }
+  .cc-hero--center .cc-clock div { padding: 6px 4px 5px; }
+  .cc-hero--center .cc-risk { padding: 6px 13px; }
+}
+
+/* hook labels vary in length; a wrapped CTA makes the card grid ragged */
+.cc-card .cc-btn { white-space: nowrap; padding-left: 16px; padding-right: 16px; gap: 8px; letter-spacing: .015em; font-size: clamp(.8125rem, .52rem + .42vw, 1.0625rem); }
+
+/* ---------- hero at large viewports ----------
+   The 520px column and the rhythm tiers above are sized for laptops. On a big
+   screen neither releases, so the composition floats in ~144px of slack with a
+   narrow column. Width and height are separate problems, so they get separate
+   tiers: a wide screen may be short, and a tall screen may be narrow. */
+@media (min-width: 1280px) {
+  .cc-hero--center .cc-clock { max-width: 620px; }
+  .cc-hero--center .cc-ocards { max-width: 620px; }
+}
+@media (min-width: 1024px) and (min-height: 1040px) {
+  .cc-hero--center .cc-hero__inner { --sp-group: 34px; --sp-step: 20px; --sp-tight: 10px; --sp-optical: 18px; padding-top: 52px; padding-bottom: 52px; }
+  .cc-hero--center .cc-clock { --clock-lg: 4rem; --clock-sm: 1.75rem; }
+  .cc-hero--center .cc-clock div { padding: 16px 4px 14px; }
+  .cc-hero--center .cc-ocards { gap: 16px; }
+  .cc-hero--center .cc-ocard { padding: 17px 22px 18px; gap: 9px; }
+  .cc-hero--center .cc-ocard__tier b { font-size: 1.75rem; }
+  .cc-hero--center .cc-risk { padding: 13px 22px; font-size: 1rem; }
+  .cc-hero--center .cc-chip { padding: 17px 32px; }
+}
+
+/* The offer section's body (package cards, term cards, CTA) is a centred
+   composition, so a left-aligned heading above it reads as a different column. */
+.cc-offer .cc-kicker { text-align: center; }
+.cc-offer .cc-h2 { text-align: center; margin-left: auto; margin-right: auto; }
+
+/* page 3 carries the same two package cards as pages 1 and 2 */
+.cc-vip__top .cc-ocards { margin-top: 14px; }
+
+/* the copy under the submit button reads as one centred block */
+.cc-vip__bottom { text-align: center; }
+
+/* ---------- page 3 left column rhythm ----------
+   Same four groups as the page 1 hero: announcement (chip), identity (h1),
+   urgency (tag + label + clock), the deal (offer cards + deposit). Tight
+   inside a group, generous between. The optical step under the headline
+   covers its 1.02 line-height, which ends tight to the glyphs. */
+.cc-vip__top { --sp-group: 26px; --sp-step: 13px; --sp-tight: 6px; --sp-optical: 8px; }
+.cc-vip__top .cc-chip { margin-bottom: var(--sp-group); }
+.cc-vip__top h1 { margin: 0; }
+.cc-vip__top .cc-tag { margin: calc(var(--sp-group) + var(--sp-optical)) 0 0; }
+.cc-vip__top .cc-clock__lead { margin-top: var(--sp-step); margin-bottom: 0; }
+.cc-vip__top .cc-clock { margin: var(--sp-tight) 0 0; }
+.cc-vip__top .cc-ocards { margin-top: var(--sp-group); }
+.cc-vip__top .cc-risk { margin-top: var(--sp-step); }
+@media (max-width: 1023px) {
+  .cc-vip__top { --sp-group: 20px; --sp-step: 11px; --sp-tight: 5px; --sp-optical: 6px; }
+}
+
+/* deposit and cancellation read as one line, split by a hairline rule */
+.cc-risk__can { position: relative; padding-left: 15px; }
+.cc-risk__can::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 1.05em; background: rgba(245,185,66,.5); }
+@media (max-width: 620px) {
+  .cc-risk { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .cc-risk__can { padding-left: 0; }
+  .cc-risk__can::before { display: none; }
+}
+
+/* The grid's right column sized to its content while the left column ran
+   longer, so the form card stopped ~68px above the deposit line. Stretch it
+   to its rows and centre the lower copy in the room that opens up, so the
+   two columns start and finish together at any height. */
+@media (min-width: 1024px) {
+  .cc-vip { align-items: stretch; }
+  .cc-vip__bottom { display: flex; flex-direction: column; justify-content: center; }
 }
