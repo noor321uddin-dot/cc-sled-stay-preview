@@ -688,13 +688,13 @@ body.cc { margin: 0; }
 /* height-gated, not desktop-gated: a short window is short at 811px wide too,
    and the hero's rhythm is a vertical concern. 768 floor keeps phones out. */
 @media (min-width: 768px) and (max-height: 850px) {
-  .cc-hero--center .cc-hero__inner { --sp-group: 9px; --sp-step: 6px; --sp-tight: 3px; --sp-optical: 0px; padding-top: 6px; padding-bottom: 6px; }
-  .cc-hero--center .cc-display { font-size: clamp(2.25rem, 3.5vw, 3.25rem); }
-  .cc-hero--center .cc-ocard { padding: 9px 14px 10px; gap: 4px; }
-  .cc-hero--center .cc-ocard__tier b { font-size: 1.3125rem; }
-  .cc-hero--center .cc-ocards { gap: 10px; }
-  .cc-hero--center .cc-clock div { padding: 6px 4px 5px; }
-  .cc-hero--center .cc-risk { padding: 6px 13px; }
+  .cc-hero--center:not(.cc-hero--short) .cc-hero__inner { --sp-group: 9px; --sp-step: 6px; --sp-tight: 3px; --sp-optical: 0px; padding-top: 6px; padding-bottom: 6px; }
+  .cc-hero--center:not(.cc-hero--short) .cc-display { font-size: clamp(2.25rem, 3.5vw, 3.25rem); }
+  .cc-hero--center:not(.cc-hero--short) .cc-ocard { padding: 9px 14px 10px; gap: 4px; }
+  .cc-hero--center:not(.cc-hero--short) .cc-ocard__tier b { font-size: 1.3125rem; }
+  .cc-hero--center:not(.cc-hero--short) .cc-ocards { gap: 10px; }
+  .cc-hero--center:not(.cc-hero--short) .cc-clock div { padding: 6px 4px 5px; }
+  .cc-hero--center:not(.cc-hero--short) .cc-risk { padding: 6px 13px; }
 }
 
 /* hook labels vary in length; a wrapped CTA makes the card grid ragged */
@@ -872,4 +872,39 @@ body.cc { margin: 0; }
    bar sits in a left-aligned column and must stay flush left there. */
 @media (max-width: 620px) {
   .cc-hero--center .cc-risk { align-items: center; text-align: center; }
+}
+
+/* ---------- page 2's hero: content-height, so it breathes on its own terms ----------
+   .cc-hero--short sets min-height:0, so this hero is sized by its own content
+   and is never under the height pressure the max-height:850 tier exists to
+   relieve. Measured at 1920x620 it stood 452px tall inside a 620px viewport
+   and still compressed itself to 9/6/3, spending air it was not short of.
+   That tier now excludes it, and it gets a floor to centre within, so the
+   leftover viewport becomes space above and below the composition instead of
+   nothing. The floor stays under a full screen on purpose: the cabin cards
+   have to break the fold and invite the scroll.
+   Two classes, so these beat the shared height tiers on specificity alone and
+   do not depend on source order. */
+@media (min-width: 768px) {
+  .cc-hero--short.cc-hero--center { min-height: min(86svh, 900px); }
+  .cc-hero--short.cc-hero--center .cc-hero__inner {
+    --sp-group: 26px; --sp-step: 14px; --sp-tight: 6px; --sp-optical: 12px;
+    padding-top: 40px; padding-bottom: 44px;
+  }
+}
+@media (min-width: 768px) and (min-height: 940px) {
+  .cc-hero--short.cc-hero--center .cc-hero__inner {
+    --sp-group: 32px; --sp-step: 18px; --sp-tight: 9px; --sp-optical: 16px;
+  }
+}
+/* A genuinely short window is the one case where this hero does run out of
+   room: the composition is ~460px of content before any gap. Tighten there,
+   and drop the floor so the hero shrink-wraps again rather than pushing the
+   fold off the screen. Still nowhere near as hard as the full-screen tier. */
+@media (min-width: 768px) and (max-height: 640px) {
+  .cc-hero--short.cc-hero--center { min-height: 0; }
+  .cc-hero--short.cc-hero--center .cc-hero__inner {
+    --sp-group: 16px; --sp-step: 9px; --sp-tight: 4px; --sp-optical: 8px;
+    padding-top: 20px; padding-bottom: 24px;
+  }
 }
