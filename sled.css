@@ -832,3 +832,6 @@ body.cc { margin: 0; }
   .cc-clock div:hover span, .cc-ocard:hover .cc-ocard__tier b, .cc-pack:hover .cc-pack__tier b,
   .cc-term--deadline:hover .cc-term__count b { text-shadow: none; }
 }
+
+/* the delivery promise sits on its own line under the scope of the code */
+.cc-form__lead-when { display: block; }
