@@ -846,3 +846,30 @@ body.cc { margin: 0; }
   .cc-vip__top { display: flex; flex-direction: column; }
   .cc-vip__top .cc-ocards { margin-bottom: auto; }
 }
+
+/* ---------- Selkirk card: lighter scrim ----------
+   Every other card's proof sits in the middle of its frame, so the standard
+   bottom scrim costs nothing. Selkirk's proof is the gloves and boots on the
+   powered dryers, which sit in the lower third, directly under the scrim and
+   the name plate. Lift the scrim there and buy the lost contrast back with a
+   shadow on the name rather than by darkening the photograph.
+   One extra class out-specifies the base rule, so source order is moot. */
+.cc-card--scrim-light .cc-card__media::after {
+  background: linear-gradient(to top, rgba(5,14,29,.5) 0%, rgba(5,14,29,.2) 32%, rgba(5,14,29,0) 58%);
+}
+.cc-card--scrim-light .cc-card__name { text-shadow: 0 2px 14px rgba(5,14,29,.95), 0 1px 3px rgba(5,14,29,.8); }
+
+/* ---------- hero without the amber tag ----------
+   The rhythm opens the urgency group with .cc-tag, which carries the gap down
+   from the headline. Page 2 drops the tag, so the countdown lead becomes the
+   group's first row and has to carry that gap itself. Adjacent-sibling, so it
+   applies on whichever hero lacks the tag and never on one that has it. */
+.cc-hero--center .cc-display + .cc-clock__lead { margin-top: calc(var(--sp-group) + var(--sp-optical)); }
+
+/* Stacked on phones, the risk bar's two lines are different lengths, so
+   left-aligning them inside a centred pill leaves a ragged right edge in an
+   otherwise centred hero. Centre them, but only in the centred hero: page 3's
+   bar sits in a left-aligned column and must stay flush left there. */
+@media (max-width: 620px) {
+  .cc-hero--center .cc-risk { align-items: center; text-align: center; }
+}
