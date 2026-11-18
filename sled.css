@@ -43,8 +43,8 @@ body.cc { margin: 0; }
 .cc [hidden] { display: none !important; }
 .cc-wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
 
-/* ---------- header (live: 76px, night, cyan hairline) ---------- */
-.cc-header { position: absolute; top: 0; left: 0; right: 0; z-index: 20; border-bottom: 1px solid rgba(0,196,224,.08); }
+/* ---------- header (live: 76px, night) ---------- */
+.cc-header { position: absolute; top: 0; left: 0; right: 0; z-index: 20; }
 .cc-header--solid { position: relative; background: var(--night); }
 .cc-header--veil { background: rgba(5,14,29,.72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 .cc-header .cc-wrap { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
