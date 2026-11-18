@@ -837,15 +837,15 @@ body.cc { margin: 0; }
 /* the delivery promise sits on its own line under the scope of the code */
 .cc-form__lead-when { display: block; }
 
-/* The two columns' boxes already align; the left column's content was
-   finishing short of its box, so the deposit pill sat above the card's
-   bottom edge. Make the column a flex stack and let the offer cards
-   absorb the slack, which puts it at a group boundary and keeps the
-   bottoms level whichever column happens to be taller. */
-@media (min-width: 1024px) {
-  .cc-vip__top { display: flex; flex-direction: column; }
-  .cc-vip__top .cc-ocards { margin-bottom: auto; }
-}
+/* An earlier pass made this column a flex stack and let the offer cards
+   absorb every pixel of slack, so the deposit pill would finish level with
+   the form card's bottom edge. It bought that level edge with a 91px hole
+   between the cards and the pill where the rhythm calls for 13px, and a gap
+   seven times wider than any other in the column reads as a mistake, not as
+   alignment. The edge it was matching is invisible anyway: above 1024px this
+   column has no background, border or shadow, so nothing marks where it ends.
+   Let the column close on its own rhythm and align the two columns along the
+   edge the eye actually checks, the top they already share. */
 
 /* ---------- Selkirk card: lighter scrim ----------
    Every other card's proof sits in the middle of its frame, so the standard
