@@ -217,6 +217,15 @@
   }
 
   // --- Page 3 form (mockup). In GHL the native form replaces it; see DESIGN-PLAN.md section 8.
+  // Preview helper: ?state=done shows the confirmation state without submitting,
+  // so the client can review it while the form is still a mockup.
+  if (/[?&]state=done(&|$)/.test(location.search)) {
+    document.querySelectorAll("[data-before-submit]").forEach(function (el) { el.hidden = true; });
+    document.querySelectorAll("[data-after-submit]").forEach(function (el) { el.hidden = false; });
+    var previewEmail = document.querySelector("[data-typed-email]");
+    if (previewEmail) previewEmail.textContent = "you@example.com";
+  }
+
   var form = document.querySelector("[data-earlybird-form]");
   if (!form) return;
   var EMAIL = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
