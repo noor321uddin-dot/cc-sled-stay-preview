@@ -68,7 +68,7 @@ body.cc { margin: 0; }
 .cc-hero__inner { position: relative; z-index: 10; flex: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 1180px; margin: 0 auto; padding: 60px 40px; }
 .cc-hero--short .cc-hero__inner { padding: 56px 40px 64px; }
 
-.cc-chip { display: inline-flex; align-self: flex-start; align-items: center; gap: 12px; background: rgba(5,14,29,.84); border: 1px solid rgba(0,196,224,.72); border-radius: 10px; padding: 15px 30px; font-family: var(--font-mono); font-size: 1.125rem; font-weight: 700; letter-spacing: .09em; color: var(--cyan); text-transform: uppercase; backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); box-shadow: 0 8px 30px rgba(5,14,29,.55), inset 0 1px 0 rgba(0,196,224,.3); }
+.cc-chip { display: inline-flex; align-self: flex-start; align-items: center; gap: 12px; background: rgba(5,14,29,.84); border: 1px solid rgba(0,196,224,.72); border-radius: 9px; padding: 11px 22px; font-family: var(--font-mono); font-size: .9375rem; font-weight: 700; letter-spacing: .1em; color: var(--cyan); text-transform: uppercase; backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); box-shadow: 0 6px 22px rgba(5,14,29,.5), inset 0 1px 0 rgba(0,196,224,.26); }
 .cc-chip i { font-size: 1.1em; }
 /* the label stays cyan, the date carries the weight: it is the fact being announced */
 .cc-chip__when { color: var(--ice); font-weight: 700; }
@@ -414,7 +414,7 @@ body.cc { margin: 0; }
   .cc-wrap { padding: 0 20px; }
   .cc-section { padding: 56px 0; }
   .cc-hero__inner, .cc-hero--short .cc-hero__inner { padding: 36px 20px 40px; }
-  .cc-hero .cc-chip { margin-bottom: 24px; font-size: .9375rem; letter-spacing: .05em; padding: 12px 17px; flex-wrap: wrap; gap: 4px 10px; }
+  .cc-hero .cc-chip { margin-bottom: 24px; font-size: .8125rem; letter-spacing: .05em; padding: 10px 15px; flex-wrap: wrap; gap: 4px 10px; }
   .cc-sub { margin-top: 16px; }
   .cc-ctas { margin-top: 28px; flex-direction: column; align-items: stretch; }
   .cc-ctas .cc-btn { width: 100%; max-width: 440px; }
@@ -657,8 +657,8 @@ body.cc { margin: 0; }
 .cc-hero--center .cc-tag { margin: calc(var(--sp-group) + var(--sp-optical)) 0 0; }
 .cc-hero--center .cc-clock__lead { margin-top: var(--sp-step); margin-bottom: 0; }
 .cc-hero--center .cc-clock { margin-top: var(--sp-tight); margin-bottom: 0; }
-.cc-hero--center .cc-risk { margin-top: var(--sp-group); }
-.cc-hero--center .cc-ocards { margin-top: var(--sp-step); }
+.cc-hero--center .cc-ocards { margin-top: var(--sp-group); }
+.cc-hero--center .cc-risk { margin-top: var(--sp-step); }
 .cc-hero--center .cc-ctas { margin-top: var(--sp-group); }
 .cc-hero--center .cc-sub { margin-top: var(--sp-group); margin-bottom: 0; max-width: 560px; }
 /* page 2's hero is not height-locked, so it follows the same height tiers
