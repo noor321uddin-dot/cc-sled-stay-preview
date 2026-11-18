@@ -661,8 +661,8 @@ body.cc { margin: 0; }
 .cc-hero--center .cc-ocards { margin-top: var(--sp-step); }
 .cc-hero--center .cc-ctas { margin-top: var(--sp-group); }
 .cc-hero--center .cc-sub { margin-top: var(--sp-group); margin-bottom: 0; max-width: 560px; }
-/* page 2 is a short hero, so it can breathe where page 1 cannot */
-.cc-hero--short.cc-hero--center .cc-hero__inner { --sp-group: 22px; --sp-step: 12px; --sp-tight: 5px; }
+/* page 2's hero is not height-locked, so it follows the same height tiers
+   as page 1 rather than a fixed rhythm of its own. One cadence everywhere. */
 .cc-hero--center .cc-chip { justify-content: center; text-align: center; }
 .cc-hero--center .cc-clock { margin-left: auto; margin-right: auto; }
 .cc-hero--center .cc-clock__lead { width: 100%; color: rgba(240,248,255,.95); text-shadow: 0 1px 10px rgba(5,14,29,.85); }
@@ -709,7 +709,7 @@ body.cc { margin: 0; }
   .cc-hero--center .cc-clock { max-width: 620px; }
   .cc-hero--center .cc-ocards { max-width: 620px; }
 }
-@media (min-width: 1024px) and (min-height: 1040px) {
+@media (min-width: 1024px) and (min-height: 1090px) {
   .cc-hero--center .cc-hero__inner { --sp-group: 34px; --sp-step: 20px; --sp-tight: 10px; --sp-optical: 18px; padding-top: 52px; padding-bottom: 52px; }
   .cc-hero--center .cc-clock { --clock-lg: 4rem; --clock-sm: 1.75rem; }
   .cc-hero--center .cc-clock div { padding: 16px 4px 14px; }
