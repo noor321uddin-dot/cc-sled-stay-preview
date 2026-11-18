@@ -13,6 +13,8 @@
       var parts = { d: d, h: pad(h), m: pad(m), s: pad(s) };
       el.querySelectorAll("[data-unit]").forEach(function (u) { u.textContent = parts[u.dataset.unit]; });
     });
+    // offer block says the same thing in words, so the two can never disagree
+    document.querySelectorAll("[data-countdown-days]").forEach(function (el) { el.textContent = d; });
   }
   tick();
   setInterval(tick, 1000);
@@ -37,14 +39,6 @@
       attr = saved.v;
     }
   } catch (e) { /* storage blocked: query string carry below still works */ }
-  // Cabin picked on page 2 (page 3 only; not stored or carried).
-  var CABINS = { selkirk: "Selkirk", apex: "Apex", shuswap: "Shuswap", monashee: "Monashee", elkhorn: "Elkhorn", multiple: "2 to 4 cabins side by side" };
-  var cabin = CABINS[url.get("cabin")];
-  if (cabin) {
-    attr.cabin = cabin; // GHL hidden field "cabin" -> Make -> Constant Contact custom field
-    var chip = document.getElementById("picked-cabin");
-    if (chip) { chip.querySelector("[data-cabin-name]").textContent = cabin; chip.hidden = false; }
-  }
   // Click cookies only when nothing else says where they came from (a newsletter UTM beats an old ad cookie).
   var cookie = function (n) { var m = document.cookie.match("(?:^|; )" + n + "=([^;]*)"); return m ? decodeURIComponent(m[1]) : ""; };
   if (!attr.utm_source) {
@@ -141,6 +135,37 @@
       document.querySelectorAll(".rv").forEach(function (el) { rvIO.observe(el); });
     }
   }
+
+  // --- Page 2 cabin cards: photo gallery + flip to the hook.
+  // The gallery advances on click and the dots jump straight to a shot. The flip is
+  // driven by a class on the card, so it works the same on desktop and on a phone.
+  document.querySelectorAll("[data-gallery]").forEach(function (gal) {
+    var shots = gal.querySelectorAll(".cc-shot");
+    var dots = gal.querySelectorAll(".cc-dot");
+    var cur = gal.querySelector("[data-cur]");
+    var at = 0;
+    function show(i) {
+      at = (i + shots.length) % shots.length;
+      shots.forEach(function (s, n) { s.classList.toggle("is-on", n === at); });
+      dots.forEach(function (d, n) {
+        d.classList.toggle("is-on", n === at);
+        if (n === at) { d.setAttribute("aria-current", "true"); } else { d.removeAttribute("aria-current"); }
+      });
+      if (cur) cur.textContent = at + 1;
+    }
+    var hit = gal.querySelector("[data-next]");
+    if (hit) hit.addEventListener("click", function () { show(at + 1); });
+    dots.forEach(function (d) {
+      d.addEventListener("click", function () { show(parseInt(d.dataset.go, 10)); });
+    });
+    // Left/right arrows move through the shots once the photo area has focus.
+    gal.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); show(at + 1); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); show(at - 1); }
+    });
+  });
+
+
   // Falling snow (same effect as the live hero): 20 flakes, skipped for reduced motion.
   if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.querySelectorAll(".cc-snow").forEach(function (box) {
@@ -217,8 +242,7 @@
     btn.textContent = "Sending...";
     setTimeout(function () {
       // One event per successful submit; event_id is shared by GA4, Meta and Google Ads for dedupe.
-      window.dataLayer.push({ event: "sled_earlybird_lead", event_id: eventId,
-        cabin: form.elements.cabin.value, nights: form.elements.nights ? form.elements.nights.value : "" });
+      window.dataLayer.push({ event: "sled_earlybird_lead", event_id: eventId });
       form.hidden = true;
       document.querySelectorAll("[data-before-submit]").forEach(function (el) { el.hidden = true; });
       document.querySelectorAll("[data-after-submit]").forEach(function (el) { el.hidden = false; });

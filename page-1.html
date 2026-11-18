@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
   <link rel="preload" as="image" href="img/rider-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
   <link rel="preload" as="image" href="img/rider-desktop.webp" media="(min-width: 768px)" fetchpriority="high">
-  <link rel="stylesheet" href="sled.css?v=13">
+  <link rel="stylesheet" href="sled.css?v=39">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css" media="print" onload="this.media='all'">
 </head>
@@ -33,13 +33,20 @@
       </picture>
       <div class="cc-snow" aria-hidden="true"></div>
       <div class="cc-hero__inner">
-        <p class="cc-chip"><span><i class="fa-solid fa-snowflake" aria-hidden="true"></i> Early Bird &middot; Ends Dec 20</span>
-          <span class="cc-count" data-countdown role="timer" aria-label="Time left in the Early Bird Special"><span data-unit="d">0</span>d <span data-unit="h">00</span>h <span data-unit="m">00</span>m <span data-unit="s">00</span>s</span></p>
+        <p class="cc-chip"><i class="fa-solid fa-snowflake" aria-hidden="true"></i> Early bird offer: ends December 20</p>
         <h1 class="cc-display"><span>Your Revelstoke</span> <span class="cyan">Sled Basecamp</span></h1>
-        <p class="cc-sub">The most convenient place to sled and stay. <strong>Lock in your dates for a one-night deposit.</strong></p>
-        <p class="cc-note"><i class="fa-solid fa-tag" aria-hidden="true"></i><span><span class="pending">25% off 3+ nights</span> <span class="pending">35% off 5+ nights</span> <span class="pending-tag">Pending Jason</span></span></p>
+        <p class="cc-tag">Limited time only</p>
+        <p class="cc-clock__lead">Offer ends in</p>
+        <div class="cc-clock" data-countdown role="timer" aria-label="Time left in the Early Bird Special, ends Dec 20">
+          <div><span data-unit="d">0</span><small>Days</small></div>
+          <div><span data-unit="h">00</span><small>Hours</small></div>
+          <div><span data-unit="m">00</span><small>Mins</small></div>
+          <div><span data-unit="s">00</span><small>Secs</small></div>
+        </div>
+        <p class="cc-risk"><span class="cc-risk__dep">Only one night deposit required</span><span class="cc-risk__can">Cancel up to 7 days before</span></p>
+        <p class="cc-note"><i class="fa-solid fa-tag" aria-hidden="true"></i><span><span class="mark">20% off 3+ nights</span> <span class="mark">30% off 5+ nights</span> with powered truck and trailer parking</span></p>
         <div class="cc-ctas">
-          <a data-step-link data-hero-cta href="page-2.html" class="cc-btn">Explore our cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <a data-step-link data-hero-cta href="page-2.html" class="cc-btn">Explore cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <dl class="cc-stats" aria-label="Quick facts">
@@ -52,14 +59,17 @@
 
     <!-- 2. Jason's zone graphic (the same image as on the main website) -->
     <section class="cc-section cc-section--night cc-mapsec">
-      <div class="cc-wrap">
-        <p class="cc-kicker">Riding zones</p>
-        <h2 class="cc-h2">Eight riding zones. <span class="cyan">You're parked in the middle.</span></h2>
-        <p class="cc-body">Most sled trips mean a hotel in town and a long drive out every morning. Here, Eagle Pass is 3 minutes from your cabin door and every zone on the map is 30 minutes or less.</p>
+      <div class="cc-wrap cc-mapsec__grid">
+        <div class="cc-mapsec__copy">
+          <p class="cc-kicker">Riding zones</p>
+          <h2 class="cc-h2">Eight riding zones. <span class="cyan">You're parked in the middle.</span></h2>
+          <p class="cc-body">Most sled trips mean a hotel in town and a long drive out every morning. Here, Eagle Pass is 3 minutes from your cabin door and every zone on the map is 30 minutes or less.</p>
+        </div>
         <figure class="cc-map" id="zone-map">
-          <img class="cc-map__img" src="img/map-750.webp" srcset="img/map-750.webp 750w, img/map-1500.webp 1500w" sizes="(min-width: 1180px) 1100px, 92vw" alt="Map of Crazy Creek between Sicamous and Revelstoke: Eagle Pass 3 min, Griffin 10 min, Joss 12 min, Mt Begbie 12 min, Blue Lake 15 min, Queest 20 min, Owl's Head 20 min, Boulder 30 min" width="1500" height="1196" loading="lazy" decoding="async">
+          <img class="cc-map__img" src="img/map-trim-750.webp" srcset="img/map-trim-750.webp 750w, img/map-trim-1500.webp 1470w" sizes="(min-width: 1024px) 70vw, 92vw" alt="Map of Crazy Creek between Sicamous and Revelstoke: Eagle Pass 3 min, Griffin 10 min, Joss 12 min, Mt Begbie 12 min, Blue Lake 15 min, Queest 20 min, Owl's Head 20 min, Boulder 30 min" width="1470" height="938" loading="lazy" decoding="async">
           <figcaption class="cc-caption">Drive times from Crazy Creek to each staging area</figcaption>
         </figure>
+        <div class="cc-section-cta"><a data-step-link href="page-2.html" class="cc-btn">Explore cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
       </div>
     </section>
 
@@ -76,7 +86,7 @@
           <ul class="cc-acc" data-accordion>
             <li class="cc-acc__item">
               <h3><button type="button" class="cc-acc__btn" aria-expanded="true" aria-controls="acc-1" id="acc-1-btn"><span class="cc-feat__icon cc-feat__icon--sky"><i class="fa-solid fa-trailer" aria-hidden="true"></i></span><span class="cc-acc__title">Powered truck &amp; trailer parking</span><i class="fa-solid fa-chevron-down cc-acc__chev" aria-hidden="true"></i></button></h3>
-              <div class="cc-acc__panel" id="acc-1" role="region" aria-labelledby="acc-1-btn"><div><p>Room for the rig in the main lot, with powered spots beside the cabins. <span class="pending">Included or extra?</span> <span class="pending-tag">Pending Jason</span></p></div></div>
+              <div class="cc-acc__panel" id="acc-1" role="region" aria-labelledby="acc-1-btn"><div><p>Room for the rig in the main lot, with powered spots beside the cabins. Included in the Sled &amp; Stay rate. The cabin-only rate is cheaper and leaves it out.</p></div></div>
             </li>
             <li class="cc-acc__item">
               <h3><button type="button" class="cc-acc__btn" aria-expanded="false" aria-controls="acc-2" id="acc-2-btn"><span class="cc-feat__icon cc-feat__icon--teal"><i class="fa-solid fa-hot-tub-person" aria-hidden="true"></i></span><span class="cc-acc__title">On-site hot pools</span><i class="fa-solid fa-chevron-down cc-acc__chev" aria-hidden="true"></i></button></h3>
@@ -91,7 +101,7 @@
               <div class="cc-acc__panel" id="acc-4" role="region" aria-labelledby="acc-4-btn" inert><div><p>Hang everything, nothing stays wet overnight. In the new Selkirk the bunk room converts into a drying room (selected cabins).</p></div></div>
             </li>
           </ul>
-          <div class="cc-section-cta"><a data-step-link href="page-2.html" class="cc-btn">Explore our cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+          <div class="cc-section-cta"><a data-step-link href="page-2.html" class="cc-btn">Explore cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
         </div>
       </div>
     </section>
@@ -124,22 +134,21 @@
         <h2 class="cc-h2">Lock in your dates for a <span class="cyan">one-night deposit.</span></h2>
         <div class="cc-deals">
           <div class="cc-deal"><div class="cc-deal__core">
-            <span class="cc-deal__badge pending-tag">Pending Jason</span>
-            <p class="cc-deal__num">25%<span>off</span></p>
+            <p class="cc-deal__num">20%<span>off</span></p>
             <p class="cc-deal__label">3+ nights</p>
           </div></div>
           <div class="cc-deal cc-deal--best"><div class="cc-deal__core">
-            <span class="cc-deal__badge pending-tag">Pending Jason</span>
-            <p class="cc-deal__num">35%<span>off</span></p>
+            <p class="cc-deal__num">30%<span>off</span></p>
             <p class="cc-deal__label">5+ nights</p>
           </div></div>
         </div>
+        <p class="cc-deal__alt">Those rates include powered truck and trailer parking. Not towing? Cabin only is 10% off 3+ nights and 20% off 5+ nights, without the trailer space.</p>
         <ul class="cc-terms">
           <li class="cc-term"><h3><i class="fa-solid fa-lock" aria-hidden="true"></i>One-night deposit</h3><p>Hold your dates now. No need to pay the whole stay up front.</p></li>
-          <li class="cc-term"><h3><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Plans change?</h3><p><span class="pending">Full refund up to 14 days before check-in. 50% refund 7 to 14 days out.</span> <span class="pending-tag">Pending Jason</span></p></li>
-          <li class="cc-term"><h3><i class="fa-solid fa-clock" aria-hidden="true"></i>Ends Dec 20</h3><p>January and February weekends go first.</p></li>
+          <li class="cc-term"><h3><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Plans change?</h3><p>Cancel 7 or more days before arrival and you are refunded, less a $15 admin fee. Inside 7 days it is 50%, and inside 72 hours there is no refund.</p></li>
+          <li class="cc-term"><h3><i class="fa-solid fa-clock" aria-hidden="true"></i>Offer ends in <span data-countdown-days>0</span> days</h3><p>Early Bird closes December 20. January and February weekends go first.</p></li>
         </ul>
-        <div class="cc-section-cta"><a data-step-link href="page-2.html" class="cc-btn">Explore our cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+        <div class="cc-section-cta"><a data-step-link href="page-2.html" class="cc-btn">Explore cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
       </div>
     </section>
 
@@ -150,12 +159,12 @@
         <h2 class="cc-h2">Questions before you load up</h2>
         <div class="cc-faq">
           <details><summary>How close is the riding?<i class="fa-solid fa-plus" aria-hidden="true"></i></summary><p>Eagle Pass staging is about 3 minutes away. Revelstoke is 30 minutes east, and all eight zones on the map are within about 30 minutes.</p></details>
-          <details><summary>Where does the truck and trailer go?<i class="fa-solid fa-plus" aria-hidden="true"></i></summary><p>There's plenty of room in the main lot, and powered parking beside the cabins. <span class="pending">Pending Jason: powered parking included in the Early Bird, or extra?</span></p></details>
+          <details><summary>Where does the truck and trailer go?<i class="fa-solid fa-plus" aria-hidden="true"></i></summary><p>There's plenty of room in the main lot, and powered parking beside the cabins. It is included in the Sled &amp; Stay rate, and not in the cheaper cabin-only rate.</p></details>
           <details><summary>Can I dry my gear overnight?<i class="fa-solid fa-plus" aria-hidden="true"></i></summary><p>Yes, in selected cabins. In the new Selkirk the bunk room converts into a drying room, so pick the Selkirk if your crew needs the space.</p></details>
-          <details><summary>How does Early Bird access work?<i class="fa-solid fa-plus" aria-hidden="true"></i></summary><p>Pick your cabin, then tell us where to send your access. It lands in your inbox with the booking link, and you choose your own dates. First come, first served.</p></details>
-          <details><summary>What if our plans change?<i class="fa-solid fa-plus" aria-hidden="true"></i></summary><p><span class="pending">Full refund up to 14 days before check-in. 50% refund 7 to 14 days out.</span> <span class="pending-tag">Pending Jason</span> Mountain roads and weather change fast, so we recommend travel insurance.</p></details>
+          <details><summary>How does Early Bird access work?<i class="fa-solid fa-plus" aria-hidden="true"></i></summary><p>Tell us where to send your access. It lands in your inbox with the booking link, and you choose your own dates. First come, first served.</p></details>
+          <details><summary>What if our plans change?<i class="fa-solid fa-plus" aria-hidden="true"></i></summary><p>Cancel 7 or more days before arrival and you are refunded, less a $15 admin fee. Inside 7 days it is 50%, and inside 72 hours there is no refund. Mountain roads and weather change fast, so we recommend travel insurance.</p></details>
         </div>
-        <div class="cc-section-cta"><a data-step-link href="page-2.html" class="cc-btn">Explore our cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+        <div class="cc-section-cta"><a data-step-link href="page-2.html" class="cc-btn">Explore cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
       </div>
     </section>
   </main>
@@ -164,14 +173,14 @@
     <div class="cc-wrap">
       <p>Crazy Creek Resort, 6162 Trans-Canada Highway, Malakwa, BC V0E 2J0</p>
       <p>&copy; 2026 Crazy Creek Resort</p>
-      <p class="mock"><span class="pending-tag">Mockup</span> For review only. Amber tags mark values Jason still has to confirm.</p>
+      <p class="mock"><span class="pending-tag">Mockup</span> For review only. Prices, parking and cancellation are confirmed.</p>
     </div>
   </footer>
 
   <div class="cc-sticky is-hidden" data-sticky-cta inert>
-    <a data-step-link href="page-2.html" class="cc-btn cc-btn--block">Explore our cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    <a data-step-link href="page-2.html" class="cc-btn cc-btn--block">Explore cabins <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
   </div>
 
-  <script src="funnel.js?v=12" defer></script>
+  <script src="funnel.js?v=16" defer></script>
 </body>
 </html>

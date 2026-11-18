@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
-  <link rel="stylesheet" href="sled.css?v=13">
+  <link rel="stylesheet" href="sled.css?v=39">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css" media="print" onload="this.media='all'">
@@ -39,21 +39,23 @@
       <p class="cc-chip"><i class="fa-solid fa-crown" aria-hidden="true"></i> VIP access &middot; Early Bird</p>
       <h1 data-before-submit>Get VIP access <span class="cyan">to Sled &amp; Stay pricing</span></h1>
       <h1 data-after-submit hidden>You're on the <span class="cyan">Early Bird list</span></h1>
+      <p class="cc-tag">Limited time only</p>
+      <p class="cc-clock__lead">Offer ends in</p>
       <div class="cc-clock" data-countdown role="timer" aria-label="Time left in the Early Bird Special, ends Dec 20">
         <div><span data-unit="d">0</span><small>Days</small></div>
         <div><span data-unit="h">00</span><small>Hours</small></div>
         <div><span data-unit="m">00</span><small>Mins</small></div>
         <div><span data-unit="s">00</span><small>Secs</small></div>
       </div>
-      <p class="cc-vip__tiers"><span class="pair"><b class="pending">25%</b> <em>off 3+ nights</em></span> <span class="pair"><b class="pending">35%</b> <em>off 5+ nights</em></span></p>
-      <p class="cc-vip__promise">One time only, ends Dec 20. We'll email your Early Bird access: your code and the booking link. <span class="pending-tag">Tiers pending Jason</span></p>
+      <p class="cc-vip__tiers"><span class="pair"><b>20%</b> <em>off 3+ nights</em></span> <span class="pair"><b>30%</b> <em>off 5+ nights</em></span></p>
+      <p class="cc-deal__alt">With powered truck and trailer parking. Cabin only, without the trailer space, is 10% and 20%.</p>
+      <p class="cc-risk"><span class="cc-risk__dep">Only one night deposit required</span><span class="cc-risk__can">Cancel up to 7 days before</span></p>
+      <p class="cc-vip__promise">One time only, ends Dec 20. We'll email your Early Bird access: your code and the booking link.</p>
     </div>
 
     <!-- ghl:form-start (replaced by the native GHL form element, styled as the card's middle part) -->
     <div class="cc-vip__part cc-vip__form">
       <form data-earlybird-form novalidate>
-        <p id="picked-cabin" class="cc-picked" hidden><i class="fa-solid fa-house-chimney" aria-hidden="true"></i> Cabin you picked: <strong data-cabin-name></strong></p>
-        <input type="hidden" name="cabin">
         <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
         <input type="hidden" name="gclid"><input type="hidden" name="gbraid"><input type="hidden" name="wbraid"><input type="hidden" name="fbclid">
         <input type="hidden" name="landing_page"><input type="hidden" name="event_id">
@@ -71,24 +73,15 @@
           <label for="phone">Phone <span>(optional)</span></label>
           <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" class="cc-input">
         </div>
-        <div class="cc-field">
-          <label for="nights">How many nights? <span>(optional)</span></label>
-          <select id="nights" name="nights" class="cc-input cc-select">
-            <option value="">Not sure yet</option>
-            <option value="3">3 nights (25% off)</option>
-            <option value="4">4 nights (25% off)</option>
-            <option value="5+">5 nights or more (35% off)</option>
-          </select>
-        </div>
-        <button type="submit" class="cc-btn cc-btn--block">Send my Early Bird access</button>
+        <button type="submit" class="cc-btn cc-btn--block">Unlock Early Bird Code</button>
       </form>
 
       <div id="form-success" class="cc-success animate__animated animate__fadeIn" tabindex="-1" role="status" hidden>
         <div class="cc-success__icon"><i class="fa-solid fa-envelope-circle-check" aria-hidden="true"></i></div>
-        <h2>Check your email.</h2>
-        <p>Your access is on its way. First come, first served.</p>
-        <p class="cc-sent">Sent to <strong data-typed-email></strong>. It arrives within 2 minutes from <span class="pending">info@crazycreekresort.com</span>. Not there? Check Promotions or Spam.</p>
-        <p>Early Bird ends Dec 20.</p>
+        <h2>Your VIP code is in your inbox.</h2>
+        <p class="cc-sent">Sent to <strong data-typed-email></strong> from info@crazycreekresort.com.</p>
+        <p>Only a one-night deposit holds your dates. Early Bird ends Dec 20.</p>
+        <p>Everything else you need is in that email.</p>
         <button type="button" class="cc-linkbtn" onclick="location.reload()">Wrong address? Enter it again</button>
       </div>
     </div>
@@ -106,10 +99,10 @@
       <h2 id="after-h">Book while dates are open</h2>
       <ul class="cc-terms">
         <li class="cc-term"><h3><i class="fa-solid fa-lock" aria-hidden="true"></i>One-night deposit</h3><p>Lock in your dates for a one-night deposit. No need to pay the whole stay up front.</p></li>
-        <li class="cc-term"><h3><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Plans change?</h3><p><span class="pending">Full refund up to 14 days before check-in. 50% refund 7 to 14 days out.</span> <span class="pending-tag">Pending Jason</span></p></li>
+        <li class="cc-term"><h3><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Plans change?</h3><p>Cancel 7 or more days before arrival and you are refunded, less a $15 admin fee. Inside 7 days it is 50%, and inside 72 hours there is no refund.</p></li>
         <li class="cc-term"><h3><i class="fa-solid fa-clock" aria-hidden="true"></i>January and February go first</h3><p>Peak weekends book out months ahead.</p></li>
       </ul>
-      <p class="cc-center"><a href="#eb-form" data-before-submit class="cc-btn">Send my Early Bird access</a></p>
+      <p class="cc-center"><a href="#eb-form" data-before-submit class="cc-btn">Get your code</a></p>
     </section>
   </main>
 
@@ -117,10 +110,10 @@
     <div class="cc-wrap">
       <p>Crazy Creek Resort, 6162 Trans-Canada Highway, Malakwa, BC V0E 2J0</p>
       <p>&copy; 2026 Crazy Creek Resort</p>
-      <p class="mock"><span class="pending-tag">Mockup</span> For review only. The form sends nothing. Amber tags mark values Jason still has to confirm.</p>
+      <p class="mock"><span class="pending-tag">Mockup</span> For review only. The form sends nothing. Prices, parking and cancellation are confirmed.</p>
     </div>
   </footer>
 
-  <script src="funnel.js?v=12" defer></script>
+  <script src="funnel.js?v=16" defer></script>
 </body>
 </html>
