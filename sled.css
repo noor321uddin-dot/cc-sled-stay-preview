@@ -617,7 +617,7 @@ body.cc { margin: 0; }
 .cc-ocards { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 12px; width: 100%; max-width: 520px; margin: 10px 0 0; padding: 0; list-style: none; }
 .cc-ocard { display: grid; grid-template-columns: 1fr 1fr; align-items: baseline; gap: 6px 14px; padding: 12px 16px 13px; border: 1px solid rgba(0,196,224,.24); border-radius: 12px; background: rgba(5,14,29,.52); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); text-align: left; }
 .cc-ocard--lead { border-color: rgba(245,185,66,.52); background: rgba(5,14,29,.66); box-shadow: 0 6px 22px rgba(5,14,29,.45); }
-.cc-ocard__name { grid-column: 1 / -1; margin: 0; font-family: var(--font-mono); font-size: .6875rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(240,248,255,.66); }
+.cc-ocard__name { grid-column: 1 / -1; text-align: center; margin: 0; font-family: var(--font-mono); font-size: .6875rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(240,248,255,.66); }
 .cc-ocard--lead .cc-ocard__name { color: var(--amber); }
 .cc-ocard__tier { margin: 0; display: flex; align-items: baseline; gap: 7px; min-width: 0; }
 .cc-ocard__tier b { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; line-height: 1; color: var(--ice); font-variant-numeric: tabular-nums; }
