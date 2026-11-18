@@ -768,3 +768,7 @@ body.cc { margin: 0; }
 
 /* the deadline sits on its own line under the delivery promise */
 .cc-consent__when { display: block; }
+
+/* Reassurance above the fields: what signing up does and does not commit you to */
+.cc-form__lead { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 22px; padding-bottom: 18px; border-bottom: 1px solid rgba(0,196,224,.18); font-size: .9375rem; line-height: 1.55; color: rgba(240,248,255,.82); }
+.cc-form__lead i { flex: 0 0 auto; margin-top: .22em; font-size: .8125rem; color: var(--cyan); }
