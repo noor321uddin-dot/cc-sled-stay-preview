@@ -62,9 +62,9 @@ body.cc { margin: 0; }
 @keyframes snowFall { 0% { transform: translateY(-20px) translateX(0); opacity: 0; } 10% { opacity: .8; } 90% { opacity: .6; } 100% { transform: translateY(120vh) translateX(40px); opacity: 0; } }
 
 /* Snowfall behind the offer cards (same flakes as the hero) */
-.cc-ocard { position: relative; overflow: hidden; }
-.cc-ocard > .cc-wrap { position: relative; z-index: 3; }
-.cc-ocard .cc-snow i { box-shadow: 0 0 6px 1px rgba(255,255,255,.55); }
+.cc-offer { position: relative; overflow: hidden; }
+.cc-offer > .cc-wrap { position: relative; z-index: 3; }
+.cc-offer .cc-snow i { box-shadow: 0 0 6px 1px rgba(255,255,255,.55); }
 .cc-hero__inner { position: relative; z-index: 10; flex: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 1180px; margin: 0 auto; padding: 60px 40px; }
 .cc-hero--short .cc-hero__inner { padding: 56px 40px 64px; }
 
@@ -228,9 +228,9 @@ body.cc { margin: 0; }
 .cc-compare i { margin-right: 6px; }
 
 /* ---------- offer (huge numerals) ---------- */
-.cc-ocard { position: relative; overflow: hidden; }
-.cc-ocard::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 85% 10%, rgba(0,196,224,.14), transparent 70%); pointer-events: none; }
-.cc-ocard .cc-wrap { position: relative; }
+.cc-offer { position: relative; overflow: hidden; }
+.cc-offer::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 85% 10%, rgba(0,196,224,.14), transparent 70%); pointer-events: none; }
+.cc-offer .cc-wrap { position: relative; }
 .cc-tiers { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid rgba(0,196,224,.15); }
 .cc-tier { padding: 32px 32px 8px 0; }
 .cc-tier + .cc-tier { padding-left: 40px; border-left: 1px solid rgba(0,196,224,.15); }
@@ -614,15 +614,15 @@ body.cc { margin: 0; }
    Two packages, two night-tiers each. Trailer parking leads (it is the
    rider package and the bigger discount); cabin only is the off-ramp,
    so it is deliberately quieter rather than a matching twin. */
-.cc-ocards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; max-width: 520px; margin: 10px 0 0; padding: 0; list-style: none; }
-.cc-ocard { display: flex; flex-direction: column; gap: 7px; padding: 12px 16px 13px; border: 1px solid rgba(0,196,224,.24); border-radius: 12px; background: rgba(5,14,29,.52); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); text-align: left; }
+.cc-ocards { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 12px; width: 100%; max-width: 520px; margin: 10px 0 0; padding: 0; list-style: none; }
+.cc-ocard { display: grid; grid-template-columns: 1fr 1fr; align-items: baseline; gap: 6px 14px; padding: 12px 16px 13px; border: 1px solid rgba(0,196,224,.24); border-radius: 12px; background: rgba(5,14,29,.52); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); text-align: left; }
 .cc-ocard--lead { border-color: rgba(245,185,66,.52); background: rgba(5,14,29,.66); box-shadow: 0 6px 22px rgba(5,14,29,.45); }
-.cc-ocard__name { margin: 0; font-family: var(--font-mono); font-size: .6875rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(240,248,255,.66); }
+.cc-ocard__name { grid-column: 1 / -1; margin: 0; font-family: var(--font-mono); font-size: .6875rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(240,248,255,.66); }
 .cc-ocard--lead .cc-ocard__name { color: var(--amber); }
-.cc-ocard__tier { margin: 0; display: flex; align-items: baseline; gap: 9px; }
+.cc-ocard__tier { margin: 0; display: flex; align-items: baseline; gap: 7px; min-width: 0; }
 .cc-ocard__tier b { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; line-height: 1; color: var(--ice); font-variant-numeric: tabular-nums; }
 .cc-ocard--lead .cc-ocard__tier b { color: var(--amber); }
-.cc-ocard__tier span { font-family: var(--font-mono); font-size: .6875rem; letter-spacing: .07em; text-transform: uppercase; color: rgba(240,248,255,.62); }
+.cc-ocard__tier span { font-family: var(--font-mono); font-size: .625rem; line-height: 1.35; letter-spacing: .04em; text-transform: uppercase; color: rgba(240,248,255,.62); }
 
 /* phone: one card per row, its two tiers side by side */
 @media (max-width: 600px) {
