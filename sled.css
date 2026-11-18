@@ -835,3 +835,13 @@ body.cc { margin: 0; }
 
 /* the delivery promise sits on its own line under the scope of the code */
 .cc-form__lead-when { display: block; }
+
+/* The two columns' boxes already align; the left column's content was
+   finishing short of its box, so the deposit pill sat above the card's
+   bottom edge. Make the column a flex stack and let the offer cards
+   absorb the slack, which puts it at a group boundary and keeps the
+   bottoms level whichever column happens to be taller. */
+@media (min-width: 1024px) {
+  .cc-vip__top { display: flex; flex-direction: column; }
+  .cc-vip__top .cc-ocards { margin-bottom: auto; }
+}
