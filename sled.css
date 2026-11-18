@@ -369,7 +369,7 @@ body.cc { margin: 0; }
 .cc-risk { margin-top: 8px; display: inline-flex; align-self: flex-start; flex-direction: row; align-items: center; flex-wrap: wrap; gap: 2px 14px;
   padding: 10px 16px; border-radius: 12px; border: 1px solid rgba(245,185,66,.34); background: rgba(245,185,66,.07);
   font-size: .9375rem; line-height: 1.45; }
-.cc-risk__dep { color: var(--amber); font-weight: 700; }
+.cc-risk__dep { color: var(--ice); font-weight: 700; transition: color .2s cubic-bezier(.16,1,.3,1); }
 .cc-risk__can { color: var(--ice); font-weight: 700; }
 .pending-tag { display: inline-block; vertical-align: middle; padding: 2px 7px; border-radius: 4px; background: var(--amber); color: var(--night); font: 700 .75rem/1.3 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
 
@@ -804,6 +804,7 @@ body.cc { margin: 0; }
 .cc-ocard--lead:hover .cc-ocard__tier b { text-shadow: 0 0 20px rgba(245,185,66,.55); }
 
 /* deposit and cancellation pill */
+.cc-risk:hover .cc-risk__dep { color: var(--amber); }
 .cc-risk:hover { transform: translateY(-2px); border-color: rgba(245,185,66,.7); background: rgba(245,185,66,.13); box-shadow: 0 10px 26px -10px rgba(245,185,66,.5); }
 
 /* package cards in the offer section */
