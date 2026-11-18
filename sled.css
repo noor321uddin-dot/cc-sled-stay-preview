@@ -886,15 +886,17 @@ body.cc { margin: 0; }
    Two classes, so these beat the shared height tiers on specificity alone and
    do not depend on source order. */
 @media (min-width: 768px) {
-  .cc-hero--short.cc-hero--center { min-height: min(86svh, 900px); }
+  .cc-hero--short.cc-hero--center { min-height: min(82svh, 860px); }
   .cc-hero--short.cc-hero--center .cc-hero__inner {
     --sp-group: 26px; --sp-step: 14px; --sp-tight: 6px; --sp-optical: 12px;
+    --sp-title: 14px;
     padding-top: 40px; padding-bottom: 44px;
   }
 }
 @media (min-width: 768px) and (min-height: 940px) {
   .cc-hero--short.cc-hero--center .cc-hero__inner {
     --sp-group: 32px; --sp-step: 18px; --sp-tight: 9px; --sp-optical: 16px;
+    --sp-title: 18px;
   }
 }
 /* A genuinely short window is the one case where this hero does run out of
@@ -905,6 +907,19 @@ body.cc { margin: 0; }
   .cc-hero--short.cc-hero--center { min-height: 0; }
   .cc-hero--short.cc-hero--center .cc-hero__inner {
     --sp-group: 16px; --sp-step: 9px; --sp-tight: 4px; --sp-optical: 8px;
+    --sp-title: 8px;
     padding-top: 20px; padding-bottom: 24px;
   }
+}
+
+/* The headline sits in the group gap on both sides, which made its two gaps
+   the largest in the hero: 32px above and 48px below at 1080, against 9px
+   inside the countdown group. That reads as a hole around the title rather
+   than as rhythm. Give the title its own knob and pull it up to the chip, so
+   the two read as one masthead block and the group gaps below stay generous.
+   Below runs 4px looser than above: "EXPLORE CABINS" is all caps with no
+   descenders, so an equal measured gap looks tighter underneath. */
+@media (min-width: 768px) {
+  .cc-hero--short.cc-hero--center .cc-display { margin-top: var(--sp-title); }
+  .cc-hero--short.cc-hero--center .cc-display + .cc-clock__lead { margin-top: calc(var(--sp-title) + 4px); }
 }
